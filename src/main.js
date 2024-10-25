@@ -1,5 +1,3 @@
-// import { header } from './components/header';
-// import { main } from './components/main';
-// import { footer } from './components/footer';
+import { header } from './components/header/Header';
 
-// document.body.append(header, main, footer);
+document.body.append(header);
