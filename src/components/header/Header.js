@@ -16,6 +16,27 @@ const logoIcon = createElement('svg', ['header__logo-icon'], `<svg xmlns="http:/
 const logoTitle = createElement('h1', ['header__logo-title'], 'the gifts');
 const nav = createElement('nav', ['header__nav']);
 
+const createNavList = () => {
+  const navList = createElement('ul', ['header__nav-list']);
+  const links = [
+    { textContent: 'gifts', url: '#' },
+    { textContent: 'about', url: '#' },
+    { textContent: 'best', url: '#' },
+    { textContent: 'contacts', url: '#' }
+  ];
+
+  links.forEach(link => {
+    const listItem = createElement('li', ['header__nav-item', 'cursor-pointer']);
+    const anchor = createElement('a', ['header__nav-link'], link.textContent);
+    anchor.href = link.url;
+    listItem.append(anchor);
+    navList.append(listItem);
+  });
+
+  return navList;
+};
+
 logoContainer.append(logoIcon, logoTitle);
+nav.append(createNavList());
 header.append(logoContainer, nav);
 export { header };

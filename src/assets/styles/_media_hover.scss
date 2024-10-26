@@ -1,3 +1,18 @@
-@media (hover: hover) and (pointer: fine) {
+@use './variables' as *;
 
+@media (hover: hover) and (pointer: fine) {
+  .header {
+    .header__nav {
+      .header__nav-list {
+        .header__nav-item {
+          &:hover {
+            background: $primary-10;
+            .header__nav-link {
+              color: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
 }
