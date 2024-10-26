@@ -13,7 +13,7 @@ const logoIcon = createElement('svg', ['header__logo-icon'], `<svg xmlns="http:/
     </clipPath>
   </defs>
 </svg>`, {}, true);
-const logoTitle = createElement('h1', ['header__logo-title'], 'the gifts');
+const logoTitle = createElement('h1', ['header__logo-title', 'user-select-none'], 'the gifts');
 const nav = createElement('nav', ['header__nav']);
 
 const createNavList = () => {
@@ -27,7 +27,7 @@ const createNavList = () => {
 
   links.forEach(link => {
     const listItem = createElement('li', ['header__nav-item', 'cursor-pointer']);
-    const anchor = createElement('a', ['header__nav-link'], link.textContent);
+    const anchor = createElement('a', ['header__nav-link', 'user-select-none'], link.textContent);
     anchor.href = link.url;
     listItem.append(anchor);
     navList.append(listItem);
