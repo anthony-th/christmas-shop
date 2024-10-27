@@ -1,5 +1,5 @@
 import './Header.scss';
-import { createElement } from '../common/createElement';
+import { createElement } from '../../common/createElement';
 
 const header = createElement('header', ['header']);
 const logoContainer = createElement('div', ['header__logo-container', 'cursor-pointer']);
