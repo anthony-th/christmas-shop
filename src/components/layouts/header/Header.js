@@ -13,7 +13,7 @@ const logoIcon = createElement('svg', ['header__logo-icon'], `<svg xmlns="http:/
     </clipPath>
   </defs>
 </svg>`, {}, true);
-const logoTitle = createElement('h1', ['header__logo-title', 'user-select-none'], 'the gifts');
+const logoTitle = createElement('h3', ['header__logo-title', 'user-select-none'], 'the gifts');
 const nav = createElement('nav', ['header__nav']);
 
 const createNavList = () => {
