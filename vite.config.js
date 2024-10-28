@@ -1,21 +1,41 @@
 import { defineConfig } from 'vite';
-import path from 'path';
+import { resolve } from 'path';
+
+const root = resolve(__dirname, 'src');
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  root: path.resolve(__dirname, 'src'),
-  base: '/christmas-shop/',
-  build: {
-    sourcemap: true,
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        api: 'modern-compiler',
+export default defineConfig(({ command }) => {
+  return {
+    root,
+    plugins: [],
+    base: command === 'serve' ? './' : '/christmas-shop/',
+    build: {
+      sourcemap: true,
+      outDir: '../dist',
+      emptyOutDir: true,
+      rollupOptions: {
+        input: {
+          main: resolve(root, 'index.html'),
+          gifts: resolve(root, 'gifts.html'),
+        },
       },
     },
-  },
-  resolve: {
-    alias: [{ find: "@", replacement: path.resolve(__dirname, "src")}],
-  },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler',
+        },
+      },
+    },
+    server: {
+      historyApiFallback: true,
+    },
+    resolve: {
+      alias: [
+        { find: "@com", replacement: resolve(root, "components") },
+        { find: "@scss", replacement: resolve(root, "assets/styles") },
+        { find: "@img", replacement: resolve(root, "assets/images") },
+      ],
+    }, 
+  };
 });
