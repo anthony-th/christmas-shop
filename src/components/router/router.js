@@ -1,15 +1,22 @@
-import { createNav } from '../layouts/header/navigation/Navigation';
+import { createNav } from '@lay/header/navigation/Navigation';
 import { homePage } from '@page/Home';
 import { giftsPage } from '@page/gifts';
+import { page404 } from '../views/404';
+import { header } from '@lay/header/Header';
+
+if (!document.body.contains(header)) {
+  document.body.prepend(header);
+}
 
 const views = {
+  404: page404,
   '/': homePage,
   '/gifts': giftsPage,
 };
 
 const showViews = () => {
   const currentPath = window.location.pathname;
-  const currentPage = views[currentPath] || homePage;
+  const currentPage = views[currentPath] || views[404];
   currentPage();
 }
 
@@ -29,7 +36,7 @@ const linksConfig = () => {
   });
 }
 
-window.addEventListener('popstate', showViews);
+window.onpopstate = showViews;
 window.addEventListener('DOMContentLoaded', () => {
   showViews();
   linksConfig();

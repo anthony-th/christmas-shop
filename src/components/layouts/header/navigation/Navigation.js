@@ -2,9 +2,9 @@ import { createElement } from '@com/common/createElement';
 
 const links = [
   { textContent: 'gifts', url: '/gifts' },
-  { textContent: 'about', url: '#' },
-  { textContent: 'best', url: '#' },
-  { textContent: 'contacts', url: '#' },
+  { textContent: 'about', url: '#about' },
+  { textContent: 'best', url: '#best' },
+  { textContent: 'contacts', url: '#contacts' },
 ];
 
 const createNav = () => {
