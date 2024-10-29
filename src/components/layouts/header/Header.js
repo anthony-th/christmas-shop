@@ -1,5 +1,6 @@
 import './Header.scss';
 import { createElement } from '@com/common/createElement';
+import { createNav } from '@lay/header/navigation/Navigation';
 
 const header = createElement('header', ['header']);
 const logoContainer = createElement('a', ['header__logo-container'], '', { href: './'});
@@ -18,21 +19,12 @@ const nav = createElement('nav', ['header__nav']);
 
 const createNavList = () => {
   const navList = createElement('ul', ['header__nav-list']);
-  const links = [
-    { textContent: 'gifts', url: '/gifts' },
-    { textContent: 'about', url: '#' },
-    { textContent: 'best', url: '#' },
-    { textContent: 'contacts', url: '#' }
-  ];
-
-  links.forEach(link => {
+  const links = createNav();
+   links.forEach(link => {
     const listItem = createElement('li', ['header__nav-item', 'cursor-pointer']);
-    const anchor = createElement('a', ['header__nav-link', 'user-select-none'], link.textContent);
-    anchor.href = link.url;
-    listItem.append(anchor);
+    listItem.append(link);
     navList.append(listItem);
   });
-
   return navList;
 };
 

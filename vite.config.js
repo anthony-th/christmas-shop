@@ -16,7 +16,6 @@ export default defineConfig(({ command }) => {
       rollupOptions: {
         input: {
           main: resolve(root, 'index.html'),
-          gifts: resolve(root, 'gifts.html'),
         },
       },
     },
@@ -35,6 +34,8 @@ export default defineConfig(({ command }) => {
         { find: "@com", replacement: resolve(root, "components") },
         { find: "@scss", replacement: resolve(root, "assets/styles") },
         { find: "@img", replacement: resolve(root, "assets/images") },
+        { find: "@page", replacement: resolve(root, "components/views") },
+        { find: "@lay", replacement: resolve(root, "components/layouts") },
       ],
     }, 
   };

@@ -37,13 +37,13 @@
       gap: 8px;
       .header__nav-item {
         list-style: none;
-        border-radius: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 12px 20px;
         .header__nav-link {
           color: $dark;
+          padding: 12px 20px;
+          border-radius: 12px;
           font-family: Montserrat;
           font-size: 12px;
           font-style: normal;

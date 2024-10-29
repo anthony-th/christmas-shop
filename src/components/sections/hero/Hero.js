@@ -1,5 +1,5 @@
 import './Hero.scss';
-import { createElement } from '../../common/createElement';
+import { createElement } from '@com/common/createElement';
 
 const heroSection = createElement('section', ['section', 'hero']);
 const heroContainer = createElement('div', ['hero__container']);
