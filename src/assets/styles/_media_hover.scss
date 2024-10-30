@@ -15,4 +15,12 @@
       }
     }
   }
+  .main-404 {
+    .page-404__link {
+      &:hover {
+        color: $dark;
+        border-color: $dark;
+      }
+    }
+  }
 }
