@@ -36,6 +36,8 @@ export default defineConfig(({ command }) => {
         { find: "@img", replacement: resolve(root, "assets/images") },
         { find: "@page", replacement: resolve(root, "components/views") },
         { find: "@lay", replacement: resolve(root, "components/layouts") },
+        { find: "@route", replacement: resolve(root, "components/router") },
+        { find: "@sections", replacement: resolve(root, "components/sections") },
       ],
     }, 
   };

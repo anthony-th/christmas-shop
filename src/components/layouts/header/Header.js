@@ -19,10 +19,7 @@ const nav = createElement('nav', ['header__nav']);
 
 const createNavList = () => {
   const navList = createElement('ul', ['header__nav-list']);
-  const links = createNav();
-   links.forEach(link => {
-    const listItem = createElement('li', ['header__nav-item', 'cursor-pointer']);
-    listItem.append(link);
+  createNav().forEach(listItem => {
     navList.append(listItem);
   });
   return navList;
@@ -31,4 +28,4 @@ const createNavList = () => {
 logoContainer.append(logoIcon, logoTitle);
 nav.append(createNavList());
 header.append(logoContainer, nav);
-export { header };
+export { header, logoContainer };
