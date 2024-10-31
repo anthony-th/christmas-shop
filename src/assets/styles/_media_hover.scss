@@ -23,4 +23,14 @@
       }
     }
   }
+  .hero {
+    .hero__container {
+      .hero__button {
+        &:hover {
+          background: $white;
+          color: $dark;
+        }
+      }
+    }
+  }
 }
