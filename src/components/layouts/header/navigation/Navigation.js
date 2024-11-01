@@ -45,4 +45,4 @@ const setActiveLink = (currentUrl) => {
   });
 };
 
-export { createNav, setActiveLink, navLinks };
+export { createNav, setActiveLink };
