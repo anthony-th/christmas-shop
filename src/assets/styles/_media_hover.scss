@@ -33,4 +33,24 @@
       }
     }
   }
+  .slider {
+    .slider__container {
+      .slider__navigation {
+        .slider__button {
+          &:hover {
+            &:not([disabled]) {
+              background-color: $white;
+              .slider__icon {
+                svg {
+                  path {
+                    stroke: $primary;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
