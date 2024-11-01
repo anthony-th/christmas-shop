@@ -40,8 +40,8 @@ const createNav = () => {
 };
 
 const setActiveLink = (currentUrl) => {
-  navLinks.forEach(anchor => {
-    anchor.classList.toggle('link-active', anchor.getAttribute('href') === currentUrl);
+  navLinks.forEach((link) => {
+    link.classList.toggle('link-active', link.getAttribute('href') === currentUrl);
   });
 };
 
