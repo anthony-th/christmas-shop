@@ -3,20 +3,33 @@ import { changeViewsUrl } from '@route/router';
 
 const linksData = [
   { textContent: 'gifts', url: '/gifts' },
-  { textContent: 'about', url: '#about' },
-  { textContent: 'best', url: '#best' },
-  { textContent: 'contacts', url: '#contacts' },
+  { textContent: 'about', url: '/#about' },
+  { textContent: 'best', url: '/#best' },
+  { textContent: 'contacts', url: '/#contacts' },
 ];
 
 const navLinks = linksData.map((link) => {
-  const anchor = createElement('a', ['header__nav-link', 'user-select-none'], link.textContent, { href: link.url });
-  anchor.onclick = (event) => {
-    event.preventDefault();
-    changeViewsUrl(link.url);
-    setActiveLink(link.url);
-  };
-  return anchor;
+  const linkElement = createElement('a', ['header__nav-link', 'user-select-none'], link.textContent, { href: link.url });
+  linkElement.onclick = (event) => clickLink(event, link);
+  return linkElement;
 });
+
+const clickLink = (event, link) => {
+  event.preventDefault();
+  changeViewsUrl(link.url);
+  checkAnchorLink(link);
+};
+
+const checkAnchorLink = (link) => {
+  if (link.url.startsWith('/#')) {
+    const urlWithSlash = link.url.slice(2);
+    if (window[urlWithSlash]) {
+      window[urlWithSlash].scrollIntoView();
+    }
+  } else {
+    setActiveLink(link.url);
+  }
+};
 
 const createNav = () => {
   return navLinks.map((link) => {

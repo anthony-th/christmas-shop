@@ -1,7 +1,7 @@
 import './About.scss';
 import { createElement } from '@com/common/createElement';
 
-const aboutSection = createElement('section', ['section', 'about']);
+const aboutSection = createElement('section', ['section', 'about'],'', { id: 'about' });
 const aboutContainer = createElement('div', ['about__container']);
 const textContainer = createElement('div', ['about__text-container']);
 const textBlock = createElement('div', ['about__text-block']);
