@@ -40,6 +40,34 @@
         text-transform: uppercase;
       }
     }
+    .sliders {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      .slider__text {
+        color: $white;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 80px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+      .slider__image-container {
+        display: flex;
+        width: 200px;
+        height: 200px;
+        align-items: center;
+        justify-content: center;
+        .slider__image {
+          width: 200px;
+          height: 200px;
+          border-radius: 20px;
+        }
+      }
+    }
     .slider__navigation {
       display: flex;
       justify-content: flex-end;
