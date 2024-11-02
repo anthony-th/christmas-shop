@@ -9,6 +9,7 @@
   .best__container {
     display: flex;
     max-width: 1276px;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     gap: 20px;
@@ -36,6 +37,55 @@
         line-height: 152%;
         letter-spacing: 3.84px;
         text-transform: uppercase;
+      }
+    }
+    .best__cards-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      align-content: flex-start;
+      gap: 12px;
+      flex-wrap: wrap;
+      .card {
+        display: flex;
+        width: 310px;
+        height: 342px;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+        background: $background-color;
+        .card__text-container {
+          background-color: $white;
+          display: flex;
+          padding: 20px;
+          flex-direction: column;
+          gap: 8px;
+          flex: 1 0 0;
+          width: 100%;
+          border-radius: 20px;
+          .card__subtitle {
+            color: $purple;
+            font-family: Montserrat;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 130%;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+          }
+          .card__title {
+            overflow: hidden;
+            color: $dark;
+            text-overflow: ellipsis;
+            font-family: Montserrat;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 152%;
+            letter-spacing: 1.28px;
+            text-transform: uppercase;
+          }
+        }
       }
     }
   }

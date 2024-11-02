@@ -38,6 +38,7 @@ export default defineConfig(({ command }) => {
         { find: "@lay", replacement: resolve(root, "components/layouts") },
         { find: "@route", replacement: resolve(root, "components/router") },
         { find: "@sections", replacement: resolve(root, "components/sections") },
+        { find: "@data", replacement: resolve(root, "data") },
       ],
     }, 
   };
