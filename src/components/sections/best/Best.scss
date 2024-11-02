@@ -1,0 +1,9 @@
+@use '../../../assets/styles/variables' as *;
+
+.best {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $background-snow 50% / cover no-repeat, $primary;
+}
