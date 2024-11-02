@@ -54,6 +54,10 @@
         align-items: center;
         border-radius: 20px;
         background: $background-color;
+        .card__image-container {
+          width: 310px;
+          height: 230px;
+        }
         .card__text-container {
           background-color: $white;
           display: flex;
@@ -72,6 +76,17 @@
             line-height: 130%;
             letter-spacing: 0.6px;
             text-transform: uppercase;
+            &--for-work {
+              color: $purple;
+            }
+            
+            &--for-health {
+              color: $green;
+            }
+            
+            &--for-harmony {
+              color: $pink;
+            }
           }
           .card__title {
             overflow: hidden;

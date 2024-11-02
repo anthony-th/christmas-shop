@@ -20,9 +20,10 @@ const createCard = ({ category, name }) => {
     src: `../../assets/images/gift-${categoryFileName}.webp`,
     alt: name
   });
-  const cardTitle = createElement('h4', ['card__subtitle'], category);
-  const cardSubtitle = createElement('h3', ['card__title'], name);
-  cardTextContainer.append(cardTitle, cardSubtitle);
+  const cardSubtitleClass = `card__subtitle--${category.toLowerCase().replace(/\s+/g, '-')}`;
+  const cardSubtitle = createElement('h4', ['card__subtitle', cardSubtitleClass], category);
+  const cardTitle = createElement('h3', ['card__title'], name);
+  cardTextContainer.append(cardSubtitle, cardTitle);
   cardImageContainer.append(cardImage);
   card.append(cardImageContainer, cardTextContainer); 
   return card;
