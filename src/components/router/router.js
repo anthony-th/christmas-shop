@@ -5,6 +5,7 @@ import { giftsPage } from '@page/gifts';
 import { page404 } from '@page/404/404';
 import { heroButton } from '@sections/hero/Hero';
 import { logoContainer } from '@lay/header/Header';
+import { ctaBtn } from '../sections/cta/Cta';
 
 const views = {
   404: page404,
@@ -35,12 +36,15 @@ const changeViewsUrl = (url) => {
 };
 
 const linksConfig = () => {
-  if (heroButton) {
-    heroButton.onclick = (event) => {
-      event.preventDefault();
-      changeViewsUrl('/gifts');
+  const giftsButtons = [heroButton, ctaBtn];
+  giftsButtons.forEach((button) => {
+    if (button) {
+      button.onclick = (event) => {
+        event.preventDefault();
+        changeViewsUrl('/gifts');
+      };
     };
-  }
+  });
   if (logoContainer) {
     logoContainer.onclick = (event) => {
       event.preventDefault();
