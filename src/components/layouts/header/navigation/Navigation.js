@@ -15,6 +15,10 @@ const navLinks = linksData.map((link) => {
 });
 
 const clickLink = (event, link) => {
+  if (window.location.pathname === '/gifts' && link.url === '/gifts') {
+    event.preventDefault();
+    return;
+  }
   event.preventDefault();
   changeViewsUrl(link.url);
   checkAnchorLink(link);
@@ -33,7 +37,7 @@ const checkAnchorLink = (link) => {
 
 const createNav = () => {
   return navLinks.map((link) => {
-    const listItem = createElement('li', ['header__nav-item', 'cursor-pointer']);
+    const listItem = createElement('li', ['header__nav-item']);
     listItem.append(link);
     return listItem;
   });
