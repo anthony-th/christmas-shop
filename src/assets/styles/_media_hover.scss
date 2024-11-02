@@ -33,6 +33,18 @@
       }
     }
   }
+  .cta {
+    .cta__container {
+      .cta__content {
+        .cta__btn {
+          &:hover {
+            background: $white;
+            color: $dark;
+          }
+        }
+      }
+    }
+  }
   .slider {
     .slider__container {
       .slider__navigation {
