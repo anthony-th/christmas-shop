@@ -4,7 +4,7 @@ import '@scss/_media_hover.scss';
 import '@scss/_modifiers.scss';
 
 const giftsPage = () => {
-  document.title = "Gifts";
+  document.title = "Christmas-shop | Gifts";
 }
 
 export { giftsPage };
