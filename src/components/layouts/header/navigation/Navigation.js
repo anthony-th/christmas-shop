@@ -18,6 +18,10 @@ const clickLink = (event, link) => {
   event.preventDefault();
   const isGiftsPage = window.location.pathname === '/gifts';
   let targetUrl = link.url;
+  if (link.textContent === 'gifts' && isGiftsPage) {
+    history.pushState(null, null, targetUrl);
+    return;
+  }
   if (link.textContent === 'contacts') {
     targetUrl = isGiftsPage ? '/gifts#contacts' : '/#contacts';
   }
@@ -50,7 +54,9 @@ const createNav = () => {
 
 const setActiveLink = (currentUrl) => {
   navLinks.forEach((link) => {
-    link.classList.toggle('link-active', link.getAttribute('href') === currentUrl);
+    const linkUrl = link.getAttribute('href');
+    const urlActive = linkUrl === currentUrl || (currentUrl.startsWith('/gifts') && linkUrl === '/gifts');
+    link.classList.toggle('link-active', urlActive);
   });
 };
 

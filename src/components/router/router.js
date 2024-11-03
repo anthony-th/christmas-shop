@@ -30,7 +30,6 @@ const checkHeaderVisible = (visibleHeader) => {
 const showViews = () => {
   const currentPath = window.location.pathname;
   const currentPage = views[currentPath] || views[404];
-  document.body.innerHTML = '';
   checkHeaderVisible(currentPath === '/' || currentPath === '/gifts');
   currentPage();
   setActiveLink(currentPath);
