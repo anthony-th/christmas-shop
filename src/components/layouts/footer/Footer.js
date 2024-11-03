@@ -4,7 +4,7 @@ import phoneIcon from '@icons/santa-claus.svg';
 import locationIcon from '@icons/christmas-tree.svg';
 import emailIcon from '@icons/snake.svg';
 
-const footer = createElement('footer', ['footer']);
+const footer = createElement('footer', ['footer'], '', { id: 'contacts' });
 const footerContainer = createElement('div', ['footer__container']);
 const contactsContainer = createElement('div', ['footer__contacts-container']);
 const socialsContainer = createElement('div', ['footer__socials-container']);

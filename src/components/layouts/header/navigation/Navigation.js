@@ -15,13 +15,18 @@ const navLinks = linksData.map((link) => {
 });
 
 const clickLink = (event, link) => {
-  if (window.location.pathname === '/gifts' && link.url === '/gifts') {
-    event.preventDefault();
-    return;
-  }
   event.preventDefault();
-  changeViewsUrl(link.url);
-  checkAnchorLink(link);
+  const isGiftsPage = window.location.pathname === '/gifts';
+  let targetUrl = link.url;
+  if (link.textContent === 'contacts') {
+    targetUrl = isGiftsPage ? '/gifts#contacts' : '/#contacts';
+  }
+  changeViewsUrl(targetUrl);
+  if (targetUrl.includes('#')) {
+    checkAnchorLink({ url: targetUrl });
+  } else {
+    setActiveLink(targetUrl);
+  }
 };
 
 const checkAnchorLink = (link) => {
