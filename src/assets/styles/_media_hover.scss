@@ -121,7 +121,16 @@
           }
           &:active {
             outline: 1px dashed $green;
-            background: rgba(6, 164, 79, 0.10);
+            &::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: rgba(6, 164, 79, 0.10);
+              border-radius: 20px;
+            }
             .contact-card__link,
             .contact-card__text {
               color: $dark;

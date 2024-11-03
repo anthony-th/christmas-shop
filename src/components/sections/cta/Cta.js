@@ -5,7 +5,7 @@ const ctaSection = createElement('section', ['section', 'cta']);
 const ctaContainer = createElement('div', ['cta__container']);
 const contentContainer = createElement('div', ['cta__content']);
 const ctaTitle = createElement('h2', ['cta__title'], 'Ready to start your journey to a better version of yourself?');
-const ctaBtn = createElement('a', ['cta__btn'], 'Explore Magical Gifts', { href: '/gifts' });
+const ctaBtn = createElement('a', ['cta__btn', 'user-select-none'], 'Explore Magical Gifts', { href: '/gifts' });
 const ctaTimerContainer = createElement('div', ['cta__timer-container']);
 const ctaCaption = createElement('h3', ['cta__caption'], 'The New Year is Coming Soon...');
 

@@ -11,7 +11,7 @@ const socialsContainer = createElement('div', ['footer__socials-container']);
 const socials = createElement('div', ['socials']);
 
 const createContactCard = (icon, href, text, description, target = '', rel = '') => {
-  const card = createElement('a', ['contact-card', 'cursor-pointer'], '', { href, target, rel });
+  const card = createElement('a', ['contact-card', 'cursor-pointer', 'user-select-none'], '', { href, target, rel });
   const iconElement = createElement('img', ['contact-card__icon'], '', { src: icon, alt: '' });
   const textElement = createElement('p', ['contact-card__link'], text);
   const descriptionText = createElement('p', ['contact-card__text'], description);
