@@ -1,0 +1,67 @@
+@use '../../../assets/styles/variables' as *;
+
+.footer {
+  display: flex;
+  padding: 60px 8px;
+  flex-direction: column;
+  align-items: center;
+  .footer__container {
+    display: flex;
+    max-width: 1276px;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+    .footer__contacts-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      border-radius: 60px;
+      width: 100%;
+      .contact-card {
+        display: flex;
+        padding: 20px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        flex: 1 0 0;
+        border-radius: 20px;
+        background: $background-color;
+        .contact-card__icon {
+          width: 80px;
+          height: 80px;
+        }
+        .contact-card__link {
+          color: $dark;
+          text-align: center;
+          font-family: Montserrat;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 152%;
+          letter-spacing: 3.84px;
+          text-transform: uppercase;
+        }
+        .contact-card__text {
+          color: $dark;
+          text-align: center;
+          font-family: Montserrat;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 152%;
+          letter-spacing: 1.28px;
+          text-transform: uppercase;
+        }
+      }
+    }
+    .footer__socials-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+  }
+}

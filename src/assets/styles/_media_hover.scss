@@ -95,4 +95,26 @@
       }
     }
   }
+  .footer {
+    .footer__container {
+      .footer__contacts-container {
+        .contact-card {
+          &:hover {
+            .contact-card__link,
+            .contact-card__text {
+              color: $primary;
+            }
+          }
+          &:active {
+            outline: 1px dashed $green;
+            background: rgba(6, 164, 79, 0.10);
+            .contact-card__link,
+            .contact-card__text {
+              color: $dark;
+            }
+          }
+        }
+      }
+    }
+  }
 }
