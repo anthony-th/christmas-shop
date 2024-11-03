@@ -12,7 +12,7 @@ const cardsContainer = createElement('div', ['best__cards-container']);
 const firstWeekCard = [dataJson[1], dataJson[15], dataJson[3], dataJson[27]];
 
 const createCard = ({ category, name }) => {
-  const card = createElement('div', ['card']);
+  const card = createElement('div', ['card', 'cursor-pointer']);
   const cardImageContainer = createElement('div', ['card__image-container']);
   const cardTextContainer = createElement('div', ['card__text-container']);
   const categoryFileName = category.toLowerCase().replace(/\s+/g, '-');

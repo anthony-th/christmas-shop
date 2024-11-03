@@ -2,6 +2,12 @@
 
 @media (hover: hover) and (pointer: fine) {
   .header {
+    .header__logo-container {
+      &:active {
+        outline: 1px dashed $green;
+        background: rgba(6, 164, 79, 0.10);
+      }
+    }
     .header__nav {
       .header__nav-list {
         .header__nav-item {
@@ -9,6 +15,11 @@
             &:hover {
               background: $primary-10;
               color: $primary;
+            }
+            &:active {
+              outline: 1px dashed $green;
+              background: rgba(6, 164, 79, 0.10);
+              color: $dark;
             }
           }
         }
@@ -29,6 +40,25 @@
         &:hover {
           background: $white;
           color: $dark;
+        }
+      }
+    }
+  }
+  .best {
+    .best__container {
+      .best__cards-container {
+        .card {
+          &:hover {
+            .card__text-container {
+              .card__title {
+                color: $primary
+              }
+            }
+          }
+          &:active {
+            outline: 1px dashed $green;
+            background: rgba(6, 164, 79, 0.10);
+          }
         }
       }
     }
