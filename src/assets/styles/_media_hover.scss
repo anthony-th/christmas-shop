@@ -16,7 +16,7 @@
               background: $primary-10;
               color: $primary;
             }
-            &:active {
+            &:active:not(.link-active) {
               outline: 1px dashed $green;
               background: rgba(6, 164, 79, 0.10);
               color: $dark;
