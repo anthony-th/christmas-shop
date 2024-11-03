@@ -129,6 +129,33 @@
           }
         }
       }
+      .footer__socials-container {
+        .socials {
+          .social-link {
+            &:hover {
+              svg {
+                path {
+                  stroke: $primary;
+                }
+              }
+            }
+            &:active {
+              outline: 1px dashed $green;
+              background: rgba(6, 164, 79, 0.10);
+              svg {
+                path {
+                  stroke: $dark;
+                }
+              }
+            }
+          }
+        }
+        .footer__caption {
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
     }
   }
 }
