@@ -1,5 +1,10 @@
+import '@scss/_typography.scss';
+import '@scss/_global.scss';
+import '@scss/_media_hover.scss';
+import '@scss/_modifiers.scss';
 import { header } from '@lay/header/Header';
 import { setActiveLink } from '@lay/header/navigation/Navigation';
+import { main } from '@lay/main/Main';
 import { homePage } from '@page/Home';
 import { giftsPage } from '@page/gifts';
 import { page404 } from '@page/404/404';
@@ -29,6 +34,7 @@ const showViews = () => {
   checkHeaderVisible(currentPath === '/' || currentPath === '/gifts');
   currentPage();
   setActiveLink(currentPath);
+  document.body.append(main);
   document.body.append(footer);
 };
 
