@@ -16,20 +16,33 @@ const navLinks = linksData.map((link) => {
 
 const clickLink = (event, link) => {
   event.preventDefault();
+  const isHomePage = window.location.pathname === '/';
   const isGiftsPage = window.location.pathname === '/gifts';
+  const linkText = link.textContent;
   let targetUrl = link.url;
-  if (link.textContent === 'gifts' && isGiftsPage) {
+  if (linkText === 'gifts' && isGiftsPage) {
     history.pushState(null, null, targetUrl);
     return;
   }
-  if (link.textContent === 'contacts') {
-    targetUrl = isGiftsPage ? '/gifts#contacts' : '/#contacts';
+  const anchorMove = (anchorUrl) => {
+    history.pushState(null, null, anchorUrl);
+    checkAnchorLink({ url: anchorUrl });
+  };
+  if (isHomePage) {
+    if (linkText === 'about' || linkText === 'best' || linkText === 'contacts') {
+      anchorMove(targetUrl);
+    } else if (linkText === 'gifts') {
+      changeViewsUrl('/gifts');
+    }
+    return;
   }
-  changeViewsUrl(targetUrl);
-  if (targetUrl.includes('#')) {
-    checkAnchorLink({ url: targetUrl });
-  } else {
-    setActiveLink(targetUrl);
+  if (isGiftsPage) {
+    if (linkText === 'contacts') {
+      anchorMove('/gifts#contacts');
+    } else if (linkText === 'about' || linkText === 'best') {
+      changeViewsUrl('/');
+      anchorMove(targetUrl);
+    }
   }
 };
 

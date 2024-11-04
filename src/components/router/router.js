@@ -31,10 +31,9 @@ const showViews = () => {
   const currentPath = window.location.pathname;
   const currentPage = views[currentPath] || views[404];
   checkHeaderVisible(currentPath === '/' || currentPath === '/gifts');
+  main.innerHTML = '';
   currentPage();
   setActiveLink(currentPath);
-  document.body.append(main);
-  document.body.append(footer);
 };
 
 const changeViewsUrl = (url) => {
@@ -64,6 +63,8 @@ window.onpopstate = showViews;
 window.addEventListener('DOMContentLoaded', () => {
   showViews();
   linksConfig();
+  document.body.append(main);
+  document.body.append(footer);
 });
 
 export { changeViewsUrl };
