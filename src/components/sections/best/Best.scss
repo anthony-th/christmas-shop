@@ -58,6 +58,10 @@
         .card__image-container {
           width: 310px;
           height: 230px;
+          .card__image {
+            width: 310px;
+            height: 230px;
+          }
         }
         .card__text-container {
           background-color: $white;
