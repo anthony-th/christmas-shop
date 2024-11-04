@@ -57,7 +57,7 @@ const socialLinksData = [
 ];
 
 socialLinksData.forEach(({ icon, href }) => {
-  const link = createElement('a', ['social-link'], icon, { href, target: '_blank', rel: 'noreferrer noopener' }, true);
+  const link = createElement('a', ['social-link'], icon,  { href, target: '_blank', rel: 'noreferrer noopener', 'aria-label': 'Social link'}, true);
   socials.append(link);
 });
 

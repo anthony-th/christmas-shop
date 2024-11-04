@@ -6,7 +6,7 @@ const bestSection = createElement('section', ['section', 'best'], '', { id: 'bes
 const bestContainer = createElement('div', ['best__container']);
 const bestTextContainer = createElement('div', ['best__text-container']);
 const bestCaption = createElement('h3', ['best__caption'], 'Best Gifts');
-const bestTitle = createElement('h2', ['best__title'], 'especially for you');
+const bestTitle = createElement('h3', ['best__title'], 'especially for you');
 const cardsContainer = createElement('div', ['best__cards-container']);
 
 const firstWeekCard = [dataJson[1], dataJson[15], dataJson[3], dataJson[27]];
@@ -22,7 +22,7 @@ const createCard = ({ category, name }) => {
   });
   const cardSubtitleClass = `card__subtitle--${category.toLowerCase().replace(/\s+/g, '-')}`;
   const cardSubtitle = createElement('h4', ['card__subtitle', cardSubtitleClass], category);
-  const cardTitle = createElement('h3', ['card__title'], name);
+  const cardTitle = createElement('h4', ['card__title'], name);
   cardTextContainer.append(cardSubtitle, cardTitle);
   cardImageContainer.append(cardImage);
   card.append(cardImageContainer, cardTextContainer); 
