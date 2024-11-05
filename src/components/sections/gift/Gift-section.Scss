@@ -1,8 +1,58 @@
 @use '../../../assets/styles/variables' as *;
 
 .gift-section {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  border-radius: 20px;
+  background: $bg-garland center top / contain no-repeat, $primary;
+  .gift-container {
+    display: flex;
+    max-width: 1276px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    .title-container {
+      display: flex;
+      max-width: 426px;
+      .gift-title {
+        color: $white;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 150%;
+        letter-spacing: 5.76px;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .tabs-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    .tabs-btn {
+      display: flex;
+      padding: 12px 20px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 12px;
+      background: transparent;
+      border: none;
+      color: $white;
+      font-family: Montserrat;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 130%;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+    .active-tab {
+      background: $white-20;
+    }
+  }
 }

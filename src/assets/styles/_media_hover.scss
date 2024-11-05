@@ -109,6 +109,20 @@
       }
     }
   }
+  .gift-section {
+    .tabs-container {
+      .tabs-btn {
+        &:hover {
+          background: $white-20;
+        }
+      }
+      .active-tab {
+        &:hover {
+          cursor: default;
+        }
+      }
+    }
+  }
   .footer {
     .footer__container {
       .footer__contacts-container {
@@ -165,6 +179,11 @@
           }
         }
       }
+    }
+  }
+  .cursor-pointer {
+    &:hover { 
+      cursor: pointer;
     }
   }
 }
