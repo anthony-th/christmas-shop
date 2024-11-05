@@ -1,6 +1,6 @@
-import './Gift-section.scss';
-import { createElement } from '@common/createElement';
-import { createCard } from '@common/create-card/createCard';
+import './gift-section.scss';
+import { createElement } from '@common/CreateElement';
+import { createCard } from '@common/create-card/CreateCard';
 import dataJson from '@data/gifts.json';
 
 const giftSection = createElement('section', ['section', 'gift-section']);

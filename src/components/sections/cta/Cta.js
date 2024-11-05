@@ -1,5 +1,5 @@
-import './Cta.scss';
-import { createElement } from '@common/createElement';
+import './cta.scss';
+import { createElement } from '@common/CreateElement';
 
 const ctaSection = createElement('section', ['section', 'cta']);
 const ctaContainer = createElement('div', ['cta__container']);

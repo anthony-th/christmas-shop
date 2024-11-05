@@ -1,6 +1,6 @@
-import './Best.scss';
-import { createElement } from '@common/createElement';
-import { createCard } from '@common/create-card/createCard';
+import './best.scss';
+import { createElement } from '@common/CreateElement';
+import { createCard } from '@common/create-card/CreateCard';
 import dataJson from '@data/gifts.json';
 
 const bestSection = createElement('section', ['section', 'best'], '', { id: 'best' });

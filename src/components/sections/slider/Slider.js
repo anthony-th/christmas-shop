@@ -1,5 +1,5 @@
-import './Slider.scss';
-import { createElement } from '@common/createElement';
+import './slider.scss';
+import { createElement } from '@common/CreateElement';
 
 const sliderSection = createElement('section', ['section', 'slider']);
 const sliderContainer = createElement('div', ['slider__container']);

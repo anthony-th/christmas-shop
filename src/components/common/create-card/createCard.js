@@ -1,5 +1,5 @@
-import './createCard.scss';
-import { createElement } from '@common/createElement';
+import './create-card.scss';
+import { createElement } from '@common/CreateElement';
 
 const createCard = ({ category, name }) => {
   const card = createElement('div', ['card', 'cursor-pointer']);

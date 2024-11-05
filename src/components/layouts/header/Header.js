@@ -1,5 +1,5 @@
-import './Header.scss';
-import { createElement } from '@common/createElement';
+import './header.scss';
+import { createElement } from '@common/CreateElement';
 import { createNav } from '@lay/header/navigation/Navigation';
 
 const header = createElement('header', ['header']);
