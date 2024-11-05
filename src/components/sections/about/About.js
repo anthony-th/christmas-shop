@@ -1,5 +1,5 @@
 import './About.scss';
-import { createElement } from '@com/common/createElement';
+import { createElement } from '@common/createElement';
 
 const aboutSection = createElement('section', ['section', 'about'],'', { id: 'about' });
 const aboutContainer = createElement('div', ['about__container']);

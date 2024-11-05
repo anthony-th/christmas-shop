@@ -40,6 +40,7 @@ export default defineConfig(({ command }) => {
         { find: "@route", replacement: resolve(root, "components/router") },
         { find: "@sections", replacement: resolve(root, "components/sections") },
         { find: "@data", replacement: resolve(root, "data") },
+        { find: "@common", replacement: resolve(root, "components/common") },
       ],
     }, 
   };

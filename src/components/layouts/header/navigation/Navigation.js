@@ -1,4 +1,4 @@
-import { createElement } from '@com/common/createElement';
+import { createElement } from '@common/createElement';
 import { changeViewsUrl } from '@route/router';
 
 const linksData = [

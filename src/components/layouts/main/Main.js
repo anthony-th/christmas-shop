@@ -1,5 +1,5 @@
 import './Main.scss';
-import { createElement } from '@com/common/createElement';
+import { createElement } from '@common/createElement';
 
 const main = createElement('main', ['main']);
 

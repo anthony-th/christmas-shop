@@ -1,7 +1,7 @@
 import '@scss/_typography.scss';
 import '@scss/_global.scss';
 import './404.scss';
-import { createElement } from '@com/common/createElement';
+import { createElement } from '@common/createElement';
 import { main } from '@lay/main/Main';
 import { footer } from '@lay/footer/Footer';
 
