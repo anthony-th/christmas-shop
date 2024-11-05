@@ -19,30 +19,36 @@ const clickLink = (event, link) => {
   const isHomePage = window.location.pathname === '/';
   const isGiftsPage = window.location.pathname === '/gifts';
   const linkText = link.textContent;
-  let targetUrl = link.url;
-  if (linkText === 'gifts' && isGiftsPage) {
-    history.pushState(null, null, targetUrl);
-    return;
-  }
+  const targetUrl = link.url;
   const anchorMove = (anchorUrl) => {
     history.pushState(null, null, anchorUrl);
     checkAnchorLink({ url: anchorUrl });
   };
-  if (isHomePage) {
-    if (linkText === 'about' || linkText === 'best' || linkText === 'contacts') {
-      anchorMove(targetUrl);
-    } else if (linkText === 'gifts') {
-      changeViewsUrl('/gifts');
-    }
-    return;
-  }
-  if (isGiftsPage) {
-    if (linkText === 'contacts') {
-      anchorMove('/gifts#contacts');
-    } else if (linkText === 'about' || linkText === 'best') {
-      changeViewsUrl('/');
-      anchorMove(targetUrl);
-    }
+  switch (linkText) {
+    case 'gifts':
+      if (isGiftsPage) {
+        history.pushState(null, null, targetUrl);
+      } else {
+        changeViewsUrl('/gifts');
+      }
+      break;
+    case 'contacts':
+      if (isGiftsPage) {
+        anchorMove(targetUrl); 
+        history.pushState(null, null, '/gifts#contacts');               
+      } else if (isHomePage) {
+        anchorMove(targetUrl);
+      }
+      break;
+    case 'about':
+    case 'best':
+      if (isHomePage) {
+        anchorMove(targetUrl);
+      } else if (isGiftsPage) {
+        changeViewsUrl('/');
+        anchorMove(targetUrl);
+      }
+      break;
   }
 };
 
