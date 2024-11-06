@@ -21,9 +21,13 @@ const views = {
 
 const checkHeaderVisible = (visibleHeader) => {
   if (visibleHeader && !document.body.contains(header)) {
+    document.body.prepend(footer);
+    document.body.prepend(main);
     document.body.prepend(header);
   } else if (!visibleHeader && document.body.contains(header)) {
     header.remove();
+    main.remove();
+    footer.remove();
   }
 };
 
@@ -63,8 +67,6 @@ window.onpopstate = showViews;
 window.addEventListener('DOMContentLoaded', () => {
   showViews();
   linksConfig();
-  document.body.append(main);
-  document.body.append(footer);
 });
 
 export { changeViewsUrl };

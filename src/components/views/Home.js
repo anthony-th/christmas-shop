@@ -7,7 +7,7 @@ import { ctaSection } from '@sections/cta/Cta';
 
 const homePage = () => {
   document.title = "Christmas-shop";
-  main.append(heroSection, aboutSection, sliderSection, bestSection, ctaSection);
+  main.prepend(heroSection, aboutSection, sliderSection, bestSection, ctaSection);
 }
 
 export { homePage };
