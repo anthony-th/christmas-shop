@@ -31,7 +31,6 @@ export default defineConfig(({ command }) => {
     },
     resolve: {
       alias: [
-        { find: "@com", replacement: resolve(root, "components") },
         { find: "@scss", replacement: resolve(root, "assets/styles") },
         { find: "@img", replacement: resolve(root, "assets/images") },
         { find: "@icons", replacement: resolve(root, "assets/icons") },
@@ -41,6 +40,7 @@ export default defineConfig(({ command }) => {
         { find: "@sections", replacement: resolve(root, "components/sections") },
         { find: "@data", replacement: resolve(root, "data") },
         { find: "@common", replacement: resolve(root, "components/common") },
+        { find: "@helpers", replacement: resolve(root, "helpers") },
       ],
     }, 
   };

@@ -5,13 +5,14 @@ import '@scss/_modifiers.scss';
 import { header } from '@lay/header/Header';
 import { setActiveLink } from '@lay/header/navigation/Navigation';
 import { main } from '@lay/main/Main';
-import { homePage } from '@page/Home';
-import { giftsPage } from '@page/gifts';
+import { homePage } from '@page/HomePage';
+import { giftsPage } from '@page/GiftsPage';
 import { page404 } from '@page/404/404';
 import { heroButton } from '@sections/hero/Hero';
 import { logoContainer } from '@lay/header/Header';
 import { ctaBtn } from '@sections/cta/Cta';
 import { footer } from '@lay/footer/Footer';
+import { scrollBrowserToTop } from '@helpers/BrowserScroll';
 
 const views = {
   404: page404,
@@ -51,6 +52,7 @@ const linksConfig = () => {
     if (button) {
       button.onclick = (event) => {
         event.preventDefault();
+        scrollBrowserToTop();
         changeViewsUrl('/gifts');
       };
     };
@@ -58,6 +60,7 @@ const linksConfig = () => {
   if (logoContainer) {
     logoContainer.onclick = (event) => {
       event.preventDefault();
+      scrollBrowserToTop();
       changeViewsUrl('/');
     };
   }
