@@ -10,7 +10,7 @@ import { giftsPage } from '@page/gifts';
 import { page404 } from '@page/404/404';
 import { heroButton } from '@sections/hero/Hero';
 import { logoContainer } from '@lay/header/Header';
-import { ctaBtn } from '../sections/cta/Cta';
+import { ctaBtn } from '@sections/cta/Cta';
 import { footer } from '@lay/footer/Footer';
 
 const views = {
