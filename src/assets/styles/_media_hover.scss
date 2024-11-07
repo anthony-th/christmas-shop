@@ -33,16 +33,12 @@
       }
     }
   }
-  .best {
-    .best__container {
-      .best__cards-container {
-        .card {
-          &:hover {
-            .card__text-container {
-              .card__title {
-                color: $primary
-              }
-            }
+  .cards-container {
+    .card {
+      &:hover {
+        .card__text-container {
+          .card__title {
+            color: $primary
           }
         }
       }
