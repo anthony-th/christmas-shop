@@ -2,12 +2,6 @@
 
 @media (hover: hover) and (pointer: fine) {
   .header {
-    .header__logo-container {
-      &:active {
-        outline: 1px dashed $green;
-        background: rgba(6, 164, 79, 0.10);
-      }
-    }
     .header__nav {
       .header__nav-list {
         .header__nav-item {
@@ -15,11 +9,6 @@
             &:hover {
               background: $primary-10;
               color: $primary;
-            }
-            &:active:not(.link-active) {
-              outline: 1px dashed $green;
-              background: rgba(6, 164, 79, 0.10);
-              color: $dark;
             }
           }
         }
@@ -52,24 +41,6 @@
             .card__text-container {
               .card__title {
                 color: $primary
-              }
-            }
-          }
-          &:active {
-            outline: 1px dashed $green;
-            &::before {
-              content: '';
-              position: absolute;
-              top: 0;
-              left: 0;
-              right: 0;
-              bottom: 0;
-              background: rgba(6, 164, 79, 0.10);
-              border-radius: 20px;
-            }
-            .card__text-container {
-              .card__title {
-                color: $dark
               }
             }
           }
@@ -133,23 +104,6 @@
               color: $primary;
             }
           }
-          &:active {
-            outline: 1px dashed $green;
-            &::before {
-              content: '';
-              position: absolute;
-              top: 0;
-              left: 0;
-              right: 0;
-              bottom: 0;
-              background: rgba(6, 164, 79, 0.10);
-              border-radius: 20px;
-            }
-            .contact-card__link,
-            .contact-card__text {
-              color: $dark;
-            }
-          }
         }
       }
       .footer__socials-container {
@@ -159,15 +113,6 @@
               svg {
                 path {
                   stroke: $primary;
-                }
-              }
-            }
-            &:active {
-              outline: 1px dashed $green;
-              background: rgba(6, 164, 79, 0.10);
-              svg {
-                path {
-                  stroke: $dark;
                 }
               }
             }
