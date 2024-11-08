@@ -15,13 +15,13 @@ const createCard = ({ category, name }) => {
   const card = createElement('article', ['card', 'cursor-pointer']);
   const cardImageContainer = createElement('div', ['card__image-container']);
   const cardTextContainer = createElement('div', ['card__text-container']);
-  const categoryFileName = category.toLowerCase().replace(/\s+/g, '-');
+  const categoryImg = category.toLowerCase().replace(/\s+/g, '-');
   const cardImage = createElement('img', ['card__image'], '', {
-    src: images[categoryFileName],
+    src: images[categoryImg],
     alt: name,
   });
-  const cardSubtitleClass = `card__subtitle--${category.toLowerCase().replace(/\s+/g, '-')}`;
-  const cardSubtitle = createElement('h4', ['card__subtitle', cardSubtitleClass], category);
+  const subtitleClass = `card__subtitle--${category.toLowerCase().replace(/\s+/g, '-')}`;
+  const cardSubtitle = createElement('h4', ['card__subtitle', subtitleClass], category);
   const cardTitle = createElement('h4', ['card__title'], name);
   
   cardTextContainer.append(cardSubtitle, cardTitle);

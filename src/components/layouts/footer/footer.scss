@@ -1,32 +1,24 @@
 @use '../../../assets/styles/variables' as *;
+@use '../../../assets/styles/mixins' as *;
 
 .footer {
-  display: flex;
+  @include flex(center, normal, column);
   padding: 60px 8px;
-  flex-direction: column;
-  align-items: center;
   .footer__container {
-    display: flex;
+    @include flex(center, normal, column);
     max-width: 1276px;
-    flex-direction: column;
-    align-items: center;
     gap: 60px;
     width: 100%;
     .footer__contacts-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex-center;
       gap: 12px;
       border-radius: 60px;
       width: 100%;
       .contacts-item {
         width: 100%;
         .contact-card {
-          display: flex;
+          @include flex(center, center, column);
           padding: 20px;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
           gap: 12px;
           flex: 1 0 0;
           border-radius: 20px;
@@ -38,32 +30,18 @@
           .contact-card__link {
             color: $dark;
             text-align: center;
-            font-family: Montserrat;
-            font-size: 24px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: 152%;
-            letter-spacing: 3.84px;
-            text-transform: uppercase;
+            @include text-header(152%, 3.84px, 24px);
           }
           .contact-card__text {
             color: $dark;
             text-align: center;
-            font-family: Montserrat;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: 152%;
-            letter-spacing: 1.28px;
-            text-transform: uppercase;
+            @include text-header(152%, 1.28px, 16px);
           }
         }
       }
     }
     .footer__socials-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      @include flex(center, center, column);
       gap: 12px;
       .socials {
         display: flex;
@@ -71,10 +49,8 @@
         gap: 12px;
         .social-link-item {
           .social-link {
-            display: flex;
+            @include flex-center;
             padding: 8px;
-            justify-content: center;
-            align-items: center;
             svg {
               width: 24px;
               height: 24px;
@@ -85,21 +61,12 @@
       .footer__paragraph {
         color: $dark;
         text-align: center;
-        font-family: Montserrat;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 148%;
+        @include text-paragraph;
       }
       .footer__caption {
         color: $dark;
         text-align: center;
-        font-family: Allura;
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 100%;
-        letter-spacing: 1.2px;
+        @include text-caption;
       }
     }
   }

@@ -1,10 +1,9 @@
 @use '../../../assets/styles/variables' as *;
+@use '../../../assets/styles/mixins' as *;
 
 .page-404 {
   min-height: 100dvh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   background-color: $white-40;
 }
 

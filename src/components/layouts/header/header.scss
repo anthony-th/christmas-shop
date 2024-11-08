@@ -1,33 +1,22 @@
 @use '../../../assets/styles/variables' as *;
+@use '../../../assets/styles/mixins' as *;
 
 .header {
-  display: flex;
+  @include flex(center, space-between);
   max-width: 1276px;
   margin: 0 auto;
   padding: 12px 0px;
-  justify-content: space-between;
-  align-items: center;
   gap: 12px;
   .header__logo-container {
-    display: flex;
+    @include flex-center;
     gap: 8px;
     padding: 8px 20px;
-    align-items: center;
-    justify-content: center;
     .header__logo-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flex-center;
     }
     .header__logo-title {
       color: $dark;
-      font-family: Montserrat;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 130%;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
+      @include text-header;
     }
   }
   .header__nav {
@@ -35,20 +24,12 @@
       display: flex;
       gap: 8px;
       .header__nav-item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex-center;
         .header__nav-link {
           color: $dark;
           padding: 12px 20px;
           border-radius: 12px;
-          font-family: Montserrat;
-          font-size: 12px;
-          font-style: normal;
-          font-weight: 600;
-          line-height: 130%;
-          letter-spacing: 0.6px;
-          text-transform: uppercase;
+          @include text-header;
         }
         .link-active {
           background: $primary-10;

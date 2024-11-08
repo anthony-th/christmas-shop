@@ -1,69 +1,42 @@
 @use '../../../assets/styles/variables' as *;
+@use '../../../assets/styles/mixins' as *;
 
 .cta {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex(center, normal, column);
   border-radius: 0px 0px 20px 20px;
   background: $bg-snow 50% / cover no-repeat, $bg-forest 50% / cover no-repeat, $primary;
   .cta__container {
-    display: flex;
+    @include flex(center, normal, column);
     max-width: 1276px;
     padding: 60px 0px;
-    flex-direction: column;
-    align-items: center;
     border-radius: 20px;
     width: 100%;
     .cta__content {
-      display: flex;
+      @include flex(center, center, column);
       max-width: 426px;
       padding: 60px 0px;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       gap: 20px;
       .cta__title {
         color: $white;
         text-align: center;
-        font-family: Montserrat;
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 152%;
-        letter-spacing: 3.84px;
-        text-transform: uppercase;
+        @include text-header(152%, 3.84px, 24px);
       }
       .cta__btn {
-        display: flex;
+        @include flex-center;
         padding: 20px 32px;
-        justify-content: center;
-        align-items: center;
         border-radius: 20px;
         background: $dark;
         color: $white;
-        font-family: Montserrat;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 130%;
-        letter-spacing: 0.6px;
-        text-transform: uppercase;
+        @include text-header;
       }
       .cta__timer-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flex(center, normal, column);
         gap: 8px;
         .cta__caption {
           color: $white;
           text-align: center;
-          font-family: Allura;
-          font-size: 24px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 100%;
-          letter-spacing: 1.2px;
+          @include text-caption;
         }
         .timer {
           display: flex;
@@ -79,24 +52,12 @@
             .timer__title {
               color: $white;
               text-align: center;
-              font-family: Montserrat;
-              font-size: 24px;
-              font-style: normal;
-              font-weight: 600;
-              line-height: 152%;
-              letter-spacing: 3.84px;
-              text-transform: uppercase;
+              @include text-header(152%, 3.84px, 24px);
             }
             .timer__description {
               color: $white;
               text-align: center;
-              font-family: Montserrat;
-              font-size: 12px;
-              font-style: normal;
-              font-weight: 600;
-              line-height: 130%;
-              letter-spacing: 0.6px;
-              text-transform: uppercase;
+              @include text-header;
             }
           }
         }
