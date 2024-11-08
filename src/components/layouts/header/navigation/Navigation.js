@@ -1,5 +1,6 @@
 import { createElement } from '@common/CreateElement';
 import { changeViewsUrl } from '@route/router';
+import { scrollBrowserToTop } from '@helpers/BrowserScroll';
 
 const linksData = [
   { textContent: 'gifts', url: '/gifts' },
@@ -30,6 +31,7 @@ const clickLink = (event, link) => {
         history.pushState(null, null, targetUrl);
       } else {
         changeViewsUrl('/gifts');
+        scrollBrowserToTop();
       }
       break;
     case 'contacts':

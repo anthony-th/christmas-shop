@@ -52,7 +52,9 @@ const linksConfig = () => {
     if (button) {
       button.onclick = (event) => {
         event.preventDefault();
-        scrollBrowserToTop();
+        const isHomePage = window.location.pathname === '/';
+        const buttonName = button === ctaBtn ? 'ctaBtn' : 'heroButton';
+        scrollBrowserToTop(isHomePage, buttonName); 
         changeViewsUrl('/gifts');
       };
     };
