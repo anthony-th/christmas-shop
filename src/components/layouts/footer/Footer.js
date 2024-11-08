@@ -8,7 +8,7 @@ const footer = createElement('footer', ['footer'], '', { id: 'contacts' });
 const footerContainer = createElement('div', ['footer__container']);
 const contactsContainer = createElement('ul', ['footer__contacts-container']);
 const socialsContainer = createElement('div', ['footer__socials-container']);
-const socials = createElement('div', ['socials']);
+const socials = createElement('ul', ['socials']);
 
 const createContactCard = (icon, href, text, description, target = '', rel = '') => {
   const contacsItem = createElement('li', ['contacts-item']);
