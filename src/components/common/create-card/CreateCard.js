@@ -22,7 +22,7 @@ const createCard = ({ category, name }) => {
   });
   const subtitleClass = `card__subtitle--${category.toLowerCase().replace(/\s+/g, '-')}`;
   const cardSubtitle = createElement('h4', ['card__subtitle', subtitleClass], category);
-  const cardTitle = createElement('h4', ['card__title'], name);
+  const cardTitle = createElement('h3', ['card__title'], name);
   
   cardTextContainer.append(cardSubtitle, cardTitle);
   cardImageContainer.append(cardImage);
