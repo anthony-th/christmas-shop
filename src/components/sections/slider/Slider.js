@@ -1,5 +1,9 @@
 import './slider.scss';
 import { createElement } from '@common/CreateElement';
+import snowman from '@img/snowman.webp';
+import christmasTrees from '@img/christmas-trees.webp';
+import christmasTreeBall from '@img/christmas-tree-ball.webp';
+import fairytaleHouse from '@img/fairytale-house.webp';
 
 const sliderSection = createElement('section', ['section', 'slider']);
 const sliderContainer = createElement('div', ['slider__container']);
@@ -38,13 +42,7 @@ const rightBtn = createButtons (
 );
 
 const texts = ['Live', 'create', 'Love', 'dream'];
-
-const imageSrc = [
-  '../../../assets/images/snowman.webp',
-  '../../../assets/images/christmas-trees.webp',
-  '../../../assets/images/christmas-tree-ball.webp',
-  '../../../assets/images/fairytale-house.webp'
-];
+const imageSrc = [snowman, christmasTrees, christmasTreeBall, fairytaleHouse];
 
 const createItems = (texts, imageSrc) => {
   texts.forEach((text, index) => {
