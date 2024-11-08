@@ -1,9 +1,9 @@
 import './slider.scss';
 import { createElement } from '@common/CreateElement';
-import snowman from '@img/snowman.webp';
-import christmasTrees from '@img/christmas-trees.webp';
-import christmasTreeBall from '@img/christmas-tree-ball.webp';
-import fairytaleHouse from '@img/fairytale-house.webp';
+import snowman from '@img/snowman.avif';
+import christmasTrees from '@img/christmas-trees.avif';
+import christmasTreeBall from '@img/christmas-tree-ball.avif';
+import fairytaleHouse from '@img/fairytale-house.avif';
 
 const sliderSection = createElement('section', ['section', 'slider']);
 const sliderContainer = createElement('div', ['slider__container']);

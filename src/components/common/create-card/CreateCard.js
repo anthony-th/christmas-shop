@@ -1,8 +1,8 @@
 import './create-card.scss';
 import { createElement } from '@common/CreateElement';
-import giftHarmony from '@img/gift-for-harmony.webp';
-import giftHealth from '@img/gift-for-health.webp';
-import giftWork from '@img/gift-for-work.webp';
+import giftHarmony from '@img/gift-for-harmony.avif';
+import giftHealth from '@img/gift-for-health.avif';
+import giftWork from '@img/gift-for-work.avif';
 
 const images = {
   'for-harmony': giftHarmony,
