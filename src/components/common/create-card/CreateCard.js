@@ -11,7 +11,8 @@ const images = {
 }
 
 const createCard = ({ category, name }) => {
-  const card = createElement('div', ['card', 'cursor-pointer']);
+  const cardItem = createElement('li', ['card-item', 'cursor-pointer']);
+  const card = createElement('article', ['card', 'cursor-pointer']);
   const cardImageContainer = createElement('div', ['card__image-container']);
   const cardTextContainer = createElement('div', ['card__text-container']);
   const categoryFileName = category.toLowerCase().replace(/\s+/g, '-');
@@ -25,9 +26,11 @@ const createCard = ({ category, name }) => {
   
   cardTextContainer.append(cardSubtitle, cardTitle);
   cardImageContainer.append(cardImage);
+
   card.append(cardImageContainer, cardTextContainer);
+  cardItem.append(card);
   
-  return card;
+  return cardItem;
 };
 
 export { createCard };

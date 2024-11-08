@@ -34,11 +34,13 @@
     }
   }
   .cards-container {
-    .card {
-      &:hover {
-        .card__text-container {
-          .card__title {
-            color: $primary
+    .card-item {
+      .card {
+        &:hover {
+          .card__text-container {
+            .card__title {
+              color: $primary
+            }
           }
         }
       }
@@ -78,14 +80,16 @@
   }
   .gift-section {
     .tabs-container {
-      .tabs-btn {
-        &:hover {
-          background: $white-20;
+      .tabs-item {
+        .tabs-btn {
+          &:hover {
+            background: $white-20;
+          }
         }
-      }
-      .active-tab {
-        &:hover {
-          cursor: default;
+        .active-tab {
+          &:hover {
+            cursor: default;
+          }
         }
       }
     }
@@ -93,22 +97,26 @@
   .footer {
     .footer__container {
       .footer__contacts-container {
-        .contact-card {
-          &:hover {
-            .contact-card__link,
-            .contact-card__text {
-              color: $primary;
+        .contacts-item {
+          .contact-card {
+            &:hover {
+              .contact-card__link,
+              .contact-card__text {
+                color: $primary;
+              }
             }
           }
         }
       }
       .footer__socials-container {
         .socials {
-          .social-link {
-            &:hover {
-              svg {
-                path {
-                  stroke: $primary;
+          .social-link-item {
+            .social-link {
+              &:hover {
+                svg {
+                  path {
+                    stroke: $primary;
+                  }
                 }
               }
             }

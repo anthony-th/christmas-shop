@@ -6,17 +6,19 @@ import emailIcon from '@icons/snake.svg';
 
 const footer = createElement('footer', ['footer'], '', { id: 'contacts' });
 const footerContainer = createElement('div', ['footer__container']);
-const contactsContainer = createElement('div', ['footer__contacts-container']);
+const contactsContainer = createElement('ul', ['footer__contacts-container']);
 const socialsContainer = createElement('div', ['footer__socials-container']);
 const socials = createElement('div', ['socials']);
 
 const createContactCard = (icon, href, text, description, target = '', rel = '') => {
+  const contacsItem = createElement('li', ['contacts-item']);
   const card = createElement('a', ['contact-card', 'cursor-pointer', 'user-select-none'], '', { href, target, rel });
   const iconElement = createElement('img', ['contact-card__icon'], '', { src: icon, alt: '' });
   const textElement = createElement('p', ['contact-card__link'], text);
   const descriptionText = createElement('p', ['contact-card__text'], description);
   card.append(iconElement, textElement, descriptionText);
-  return card;
+  contacsItem.append(card);
+  return contacsItem;
 };
 
 const contacts = [
@@ -57,8 +59,10 @@ const socialLinksData = [
 ];
 
 socialLinksData.forEach(({ icon, href }) => {
+  const linkItem = createElement('li', ['social-link-item']);
   const link = createElement('a', ['social-link'], icon,  { href, target: '_blank', rel: 'noreferrer noopener', 'aria-label': 'Social link'}, true);
-  socials.append(link);
+  linkItem.append(link);
+  socials.append(linkItem);
 });
 
 const footerParagraph = createElement('p', ['footer__paragraph'], '© Copyright 2025, All Rights Reserved');
