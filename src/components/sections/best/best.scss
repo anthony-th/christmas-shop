@@ -10,6 +10,11 @@
     max-width: 1276px;
     width: 100%;
     gap: 20px;
+    .cards-container {
+      @media screen and (max-width: 1295px) {
+        max-width: 800px;
+      }
+    }
     .best__text-container {
       @include flex(center, normal, column);
       max-width: 426px;
