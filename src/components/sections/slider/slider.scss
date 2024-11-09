@@ -29,19 +29,18 @@
       align-items: center;
       gap: 20px;
       width: 100%;
-      .slider__text {
-        color: $white;
-        text-align: center;
-        @include text-header(normal, normal, 80px);
-      }
-      .slider__image-container {
-        @include flex-center;
-        width: 200px;
-        height: 200px;
+      .slider-item {
+        @include flex(center, center, row-reverse);
+        gap: 20px;
         .slider__image {
           width: 200px;
           height: 200px;
           border-radius: 20px;
+        }
+        .slider__text {
+          color: $white;
+          text-align: center;
+          @include text-header(normal, normal, 80px);
         }
       }
     }

@@ -46,11 +46,11 @@ const imageSrc = [snowman, christmasTrees, christmasTreeBall, fairytaleHouse];
 
 const createItems = (texts, imageSrc) => {
   texts.forEach((text, index) => {
-    const textElement = createElement('div', ['slider__text'], text);
-    const imageContainer = createElement('div', ['slider__image-container']);
-    const image = createElement('img', ['slider__image'], '', { src: imageSrc[index], alt: 'slider image' });
-    imageContainer.append(image);
-    sliders.append(textElement, imageContainer);
+    const sliderElement =  createElement('figure', ['slider-item']);
+    const sliderImg = createElement('img', ['slider__image'], '', { src: imageSrc[index], alt: 'slider image' });
+    const sliderText = createElement('figcaption', ['slider__text'], text);
+    sliderElement.append(sliderImg, sliderText);
+    sliders.append(sliderElement);
   });
 };
 
