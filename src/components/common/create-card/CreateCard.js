@@ -13,6 +13,7 @@ const images = {
 const createCard = ({ category, name }) => {
   const cardItem = createElement('li', ['card-item', 'cursor-pointer']);
   const card = createElement('article', ['card', 'cursor-pointer']);
+  const cardBtn = createElement('button', ['card__button', 'cursor-pointer'], '', { 'aria-label': 'Open card' });
   const cardImageContainer = createElement('div', ['card__image-container']);
   const cardTextContainer = createElement('div', ['card__text-container']);
   const categoryImg = category.toLowerCase().replace(/\s+/g, '-');
@@ -27,7 +28,7 @@ const createCard = ({ category, name }) => {
   cardTextContainer.append(cardSubtitle, cardTitle);
   cardImageContainer.append(cardImage);
 
-  card.append(cardImageContainer, cardTextContainer);
+  card.append(cardImageContainer, cardTextContainer, cardBtn);
   cardItem.append(card);
   
   return cardItem;

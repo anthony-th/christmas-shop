@@ -13,6 +13,18 @@
       height: 342px;
       border-radius: 20px;
       background: $bg-color-white;
+      position: relative;
+      .card__button {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 20px;
+        background: transparent;
+        border: none;
+      }
       .card__image-container {
         width: 310px;
         height: 230px;
