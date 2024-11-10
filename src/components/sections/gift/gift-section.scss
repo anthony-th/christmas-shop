@@ -25,6 +25,9 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    @media screen and (max-width: 670px) {
+      gap: 0px;
+    }
     .tabs-item {
       .tabs-btn {
         @include flex-center;
@@ -34,6 +37,9 @@
         border: none;
         color: $white;
         @include text-header;
+        @media screen and (max-width: 670px) {
+          padding: 12px 8px;
+        }
       }
       .active-tab {
         background: $white-20;
