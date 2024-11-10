@@ -20,7 +20,7 @@
       .cta__title {
         color: $white;
         text-align: center;
-        @include text-header(152%, 3.84px, 24px);
+        @include text-header(150%, 3.84px, 24px);
       }
       .cta__btn {
         @include flex-center;
