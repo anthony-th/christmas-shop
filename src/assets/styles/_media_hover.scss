@@ -2,13 +2,15 @@
 
 @media (hover: hover) and (pointer: fine) {
   .header {
-    .header__nav {
-      .header__nav-list {
-        .header__nav-item {
-          .header__nav-link {
-            &:hover {
-              background: $primary-10;
-              color: $primary;
+    .header__nav-container {
+      .header__nav {
+        .header__nav-list {
+          .header__nav-item {
+            .header__nav-link {
+              &:hover {
+                background: $primary-10;
+                color: $primary;
+              }
             }
           }
         }

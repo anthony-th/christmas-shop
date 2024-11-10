@@ -15,7 +15,9 @@ const logoIcon = createElement('svg', ['header__logo-icon'], `<svg xmlns="http:/
   </defs>
 </svg>`, {}, true);
 const logoTitle = createElement('h3', ['header__logo-title', 'user-select-none'], 'the gifts');
+const navigationContainer = createElement('div', ['header__nav-container']);
 const nav = createElement('nav', ['header__nav']);
+const burgerMenu = createElement('button', ['burger-menu', 'cursor-pointer']);
 
 const createNavList = () => {
   const navList = createElement('ul', ['header__nav-list']);
@@ -27,5 +29,6 @@ const createNavList = () => {
 
 logoContainer.append(logoIcon, logoTitle);
 nav.append(createNavList());
-header.append(logoContainer, nav);
+navigationContainer.append(nav, burgerMenu);
+header.append(logoContainer, navigationContainer);
 export { header, logoContainer };
