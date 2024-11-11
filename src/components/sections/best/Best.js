@@ -10,9 +10,13 @@ const bestCaption = createElement('h3', ['best__caption'], 'Best Gifts');
 const bestTitle = createElement('h3', ['best__title'], 'especially for you');
 const cardsContainer = createElement('ul', ['cards-container']);
 
-const firstWeekCard = [dataJson[1], dataJson[15], dataJson[3], dataJson[27]];
+const getRandomCards = (array, quantity) => {
+  return Array.from({ length: quantity }, () => array[Math.floor(Math.random() * array.length)]);
+}
 
-cardsContainer.append(...firstWeekCard.map(createCard));
+const randomCard = getRandomCards(dataJson, 4);
+
+cardsContainer.append(...randomCard.map(createCard));
 bestTextContainer.append(bestCaption, bestTitle);
 bestContainer.append(bestTextContainer, cardsContainer);
 bestSection.append(bestContainer);
