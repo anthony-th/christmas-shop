@@ -12,6 +12,11 @@ const svgStar = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" 
   </defs>
 </svg>`;
 
+const closeSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+  <path d="M30 10L10 30" stroke="#181C29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M10 10L30 30" stroke="#181C29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+
 const createStars = (count) => {
   return Array.from({ length: count }, () => createElement('svg', ['superpowers__star'], svgStar, {}, true));
 };
@@ -26,7 +31,20 @@ const createSuperpower = (titleText, paragraphText, starsCount) => {
   return superpowerContainer;
 };
 
+const toggleActiveClass = (modal, shadow) => {
+  modal.classList.toggle('modal-active');
+  shadow.classList.toggle('modal-active');
+  document.body.classList.toggle('overflow-hidden');
+}
+
+const closeModal = (modal, shadow) => {
+  toggleActiveClass(modal, shadow);
+  modal.remove();
+  shadow.remove();
+}
+
 const createAndOpenModal = (item, image) => {
+  const shadow = createElement('div', ['shadow']);
   const modal = createElement('div', ['modal']);
   const imageContainer = createElement('div', ['modal__image-container']);
   const cardImage = createElement('img', ['modal__image'], '', {
@@ -49,12 +67,20 @@ const createAndOpenModal = (item, image) => {
     createSuperpower('Love', item.superpowers.love, Math.round(item.superpowers.love / 100)),
     createSuperpower('Dream', item.superpowers.dream, Math.round(item.superpowers.dream / 100))
   );
+
+  const cancelBtn = createElement('button', ['modal__cancel', 'cursor-pointer'], '', { 'aria-label': 'Close modal' });
+  cancelBtn.append(createElement('svg', ['modal__cancel-icon'], closeSvg, {}, true));
+
   imageContainer.append(cardImage);
   textContainer.append(category, title, paragraph);
   superpowers.append(superpowersTitle, superpowersContainer);
   descriptionContainer.append(textContainer, superpowers);
-  modal.append(imageContainer, descriptionContainer);
-  document.body.append(modal);
+  modal.append(imageContainer, descriptionContainer, cancelBtn);
+  document.body.append(modal, shadow);
+
+  requestAnimationFrame(() => toggleActiveClass(modal, shadow));
+  cancelBtn.onclick = () => closeModal(modal, shadow);
+  shadow.onclick = () => closeModal(modal, shadow);
 }
 
 export { createAndOpenModal };
