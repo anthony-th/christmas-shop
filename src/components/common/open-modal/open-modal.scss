@@ -50,12 +50,29 @@
         color: $dark;
         @include text-paragraph;
       }
-      .superpowers-container,
-      .superpowers__information {
-        display: flex;
-        align-items: center;
-        gap: 12px;
+      .superpowers-container {
+        @include flex(flex-start, normal, column);
         width: 100%;
+        .superpowers__information {
+          @include flex(center, normal, row);
+          gap: 12px;
+          width: 100%;
+          .superpowers__title {
+            color: $dark;
+            @include text-paragraph;
+            flex: 1 0 0;
+          }
+          .superpowers__text {
+            color: $dark;
+            @include text-paragraph;
+          }
+          .superpowers__stars {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            min-width: 112px;
+          }
+        }
       }
     }
   }
