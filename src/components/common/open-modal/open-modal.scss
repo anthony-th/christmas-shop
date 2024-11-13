@@ -1,0 +1,62 @@
+@use '../../../assets/styles/variables' as *;
+@use '../../../assets/styles/mixins' as *;
+
+.modal {
+  @include flex(center, center, column);
+  width: 400px;
+  position: fixed;
+  top: calc(50% - (514px/2));
+  left: calc(50% - (400px/2));
+  background: $bg-color-white;
+  border-radius: 20px;
+  &__image-container {
+    @include flex(center, center, column);
+    height: 230px;
+    width: 100%;
+    .modal__image {
+      height: 100%;
+    }
+  }
+  &__description-container {
+    @include flex(flex-start, normal, column);
+    padding:20px;
+    gap: 20px;
+    width: 100%;
+    background: #fff;
+    border-radius: 20px;
+    .modal__text-container {
+      @include flex(flex-start, normal, column);
+      width: 100%;
+      gap: 8px;
+      .modal__subtitle {
+        @include text-header;
+        &--for-work {
+          color: $purple;
+        }
+
+        &--for-health {
+          color: $green;
+        }
+
+        &--for-harmony {
+          color: $pink;
+        }
+      }
+      .modal__title {
+        color: $dark;
+        @include text-header(152%, 1.28px, 16px);
+      }
+      .modal__paragraph {
+        color: $dark;
+        @include text-paragraph;
+      }
+      .superpowers-container,
+      .superpowers__information {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+      }
+    }
+  }
+}

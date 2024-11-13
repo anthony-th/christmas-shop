@@ -1,5 +1,6 @@
 import './create-card.scss';
 import { createElement } from '@common/CreateElement';
+import { createAndOpenModal as OpenModal } from '@common/open-modal/OpenModal';
 import giftHarmony from '@img/gift-for-harmony.avif';
 import giftHealth from '@img/gift-for-health.avif';
 import giftWork from '@img/gift-for-work.avif';
@@ -10,27 +11,28 @@ const images = {
   'for-work': giftWork,
 }
 
-const createCard = ({ category, name }) => {
+const createCard = (item) => {
   const cardItem = createElement('li', ['card-item', 'cursor-pointer']);
   const card = createElement('article', ['card', 'cursor-pointer']);
   const cardBtn = createElement('button', ['card__button', 'cursor-pointer'], '', { 'aria-label': 'Open card' });
   const cardImageContainer = createElement('div', ['card__image-container']);
   const cardTextContainer = createElement('div', ['card__text-container']);
-  const categoryImg = category.toLowerCase().replace(/\s+/g, '-');
+  const categoryImg = item.category.toLowerCase().replace(/\s+/g, '-');
   const cardImage = createElement('img', ['card__image'], '', {
     src: images[categoryImg],
-    alt: name,
+    alt: item.name,
   });
-  const subtitleClass = `card__subtitle--${category.toLowerCase().replace(/\s+/g, '-')}`;
-  const cardSubtitle = createElement('h4', ['card__subtitle', subtitleClass], category);
-  const cardTitle = createElement('h3', ['card__title'], name);
+  const subtitleClass = `card__subtitle--${item.category.toLowerCase().replace(/\s+/g, '-')}`;
+  const cardSubtitle = createElement('h4', ['card__subtitle', subtitleClass], item.category);
+  const cardTitle = createElement('h3', ['card__title'], item.name);
   
   cardTextContainer.append(cardSubtitle, cardTitle);
   cardImageContainer.append(cardImage);
-
   card.append(cardImageContainer, cardTextContainer, cardBtn);
   cardItem.append(card);
   
+  cardBtn.onclick = () => OpenModal(item, images[categoryImg]);
+
   return cardItem;
 };
 

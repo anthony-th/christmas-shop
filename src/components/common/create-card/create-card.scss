@@ -43,7 +43,6 @@
         width: 100%;
         border-radius: 20px;
         .card__subtitle {
-          color: $purple;
           @include text-header;
           &--for-work {
             color: $purple;
