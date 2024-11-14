@@ -11,7 +11,7 @@ const page404 = () => {
   footer.innerHTML = '';
   const title = createElement('h2', ['page-404__title'], '404');
   const subTitle = createElement('h3', ['page-404__subtitle'], 'Page not found');
-  const homeLink = createElement('a', ['page-404__link', 'cursor-pointer'], 'HOME', { href: '/' });
+  const homeLink = createElement('a', ['page-404__link', 'cursor-pointer'], 'HOME', { href: '/christmas-shop/' });
 
   main.className = 'main main-404';
   document.body.className = 'page-404';

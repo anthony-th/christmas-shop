@@ -16,6 +16,8 @@ export default defineConfig(({ command }) => {
       rollupOptions: {
         input: {
           main: resolve(root, 'index.html'),
+          gifts: resolve(root, 'gifts.html'),
+          notfound: resolve(root, '404.html'),
         },
       },
     },

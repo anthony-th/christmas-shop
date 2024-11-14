@@ -14,10 +14,12 @@ import { ctaBtn } from '@sections/cta/Cta';
 import { footer } from '@lay/footer/Footer';
 import { scrollBrowserToTop } from '@helpers/BrowserScroll';
 
+const basePath = '/christmas-shop';
+
 const views = {
   404: page404,
-  '/': homePage,
-  '/gifts': giftsPage,
+  '/christmas-shop/': homePage,
+  '/christmas-shop/gifts': giftsPage,
 };
 
 const checkHeaderVisible = (visibleHeader) => {
@@ -35,14 +37,14 @@ const checkHeaderVisible = (visibleHeader) => {
 const showViews = () => {
   const currentPath = window.location.pathname;
   const currentPage = views[currentPath] || views[404];
-  checkHeaderVisible(currentPath === '/' || currentPath === '/gifts');
+  checkHeaderVisible(currentPath === '/christmas-shop/' || currentPath === '/christmas-shop/gifts');
   main.innerHTML = '';
   currentPage();
   setActiveLink(currentPath);
 };
 
 const changeViewsUrl = (url) => {
-  history.pushState(null, null, url);
+  history.pushState(null, null, basePath + url);
   showViews();
 };
 
@@ -52,7 +54,7 @@ const linksConfig = () => {
     if (button) {
       button.onclick = (event) => {
         event.preventDefault();
-        const isHomePage = window.location.pathname === '/';
+        const isHomePage = window.location.pathname === '/christmas-shop/';
         const buttonName = button === ctaBtn ? 'ctaBtn' : 'heroButton';
         scrollBrowserToTop(isHomePage, buttonName); 
         changeViewsUrl('/gifts');

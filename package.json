@@ -2,6 +2,7 @@
   "name": "christmas-shop",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://anthony-th.github.io/christmas-shop/",
   "type": "module",
   "scripts": {
     "dev": "vite",

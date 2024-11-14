@@ -10,17 +10,17 @@ const linksData = [
 ];
 
 const navLinks = linksData.map((link) => {
-  const linkElement = createElement('a', ['header__nav-link', 'user-select-none'], link.textContent, { href: link.url });
+  const linkElement = createElement('a', ['header__nav-link', 'user-select-none'], link.textContent, { href: `/christmas-shop` + link.url });
   linkElement.onclick = (event) => clickLink(event, link);
   return linkElement;
 });
 
 const clickLink = (event, link) => {
   event.preventDefault();
-  const isHomePage = window.location.pathname === '/';
-  const isGiftsPage = window.location.pathname === '/gifts';
+  const isHomePage = window.location.pathname === '/christmas-shop/';
+  const isGiftsPage = window.location.pathname === '/christmas-shop/gifts';
   const linkText = link.textContent;
-  const targetUrl = link.url;
+  const targetUrl = `/christmas-shop` + link.url;
   const anchorMove = (anchorUrl) => {
     history.pushState(null, null, anchorUrl);
     checkAnchorLink({ url: anchorUrl });
@@ -37,7 +37,7 @@ const clickLink = (event, link) => {
     case 'contacts':
       if (isGiftsPage) {
         anchorMove(targetUrl); 
-        history.pushState(null, null, '/gifts#contacts');               
+        history.pushState(null, null, '/christmas-shop/gifts#contacts');               
       } else if (isHomePage) {
         anchorMove(targetUrl);
       }
@@ -55,13 +55,13 @@ const clickLink = (event, link) => {
 };
 
 const checkAnchorLink = (link) => {
-  if (link.url.startsWith('/#')) {
-    const urlWithSlash = link.url.slice(2);
+  if (link.url.startsWith('/christmas-shop/#')) {
+    const urlWithSlash = link.url.slice('/christmas-shop/#'.length);
     if (window[urlWithSlash]) {
       window[urlWithSlash].scrollIntoView();
     }
   } else {
-    setActiveLink(link.url);
+    setActiveLink(`/christmas-shop` + link.url);
   }
 };
 
@@ -76,7 +76,7 @@ const createNav = () => {
 const setActiveLink = (currentUrl) => {
   navLinks.forEach((link) => {
     const linkUrl = link.getAttribute('href');
-    const urlActive = linkUrl === currentUrl || (currentUrl.startsWith('/gifts') && linkUrl === '/gifts');
+    const urlActive = linkUrl === currentUrl || (currentUrl.startsWith('/christmas-shop/gifts') && linkUrl === '/christmas-shop/gifts');
     link.classList.toggle('link-active', urlActive);
   });
 };
