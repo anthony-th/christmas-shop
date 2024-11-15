@@ -11,7 +11,10 @@ const svg = createElement('svg', ['icon-up'], `<svg xmlns="http://www.w3.org/200
   <path d="M6 11L12 5" stroke="#FF4646" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>`, {}, true);
 buttonUp.append(svg);
-buttonUp.onclick = scrollBrowserToTop;
+buttonUp.onclick = () => {
+  scrollBrowserToTop();
+  history.pushState(null, '', '/christmas-shop/gifts');
+}
 
 const createButtonUp = () => {
   const isGiftsPage = window.location.pathname.includes('gifts');
