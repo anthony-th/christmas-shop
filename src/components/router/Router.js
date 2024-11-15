@@ -13,7 +13,7 @@ import { logoContainer } from '@lay/header/Header';
 import { ctaBtn } from '@sections/cta/Cta';
 import { footer } from '@lay/footer/Footer';
 import { scrollBrowserToTop } from '@helpers/BrowserScroll';
-import { createButtonUp as btnUp } from '@common/button-up/ButtonUp';
+import { createButtonUp as btnUp, checkTop } from '@common/button-up/ButtonUp';
 
 const basePath = '/christmas-shop';
 
@@ -74,6 +74,7 @@ const linksConfig = () => {
 
 window.onpopstate = showViews;
 window.onresize = btnUp;
+window.onscroll = checkTop;
 window.addEventListener('DOMContentLoaded', () => {
   showViews();
   linksConfig();

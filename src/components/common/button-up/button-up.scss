@@ -1,0 +1,18 @@
+@use '../../../assets/styles/variables' as *;
+@use '../../../assets/styles/mixins' as *;
+
+.button-up {
+  @include flex-center;
+  width: 56px;
+  height: 56px;
+  position: fixed;
+  right: 8px;
+  bottom: 8px;
+  border-radius: 100px;
+  border: 1px solid $primary;
+  background: $white;
+}
+
+.display-none {
+  display: none;
+}
