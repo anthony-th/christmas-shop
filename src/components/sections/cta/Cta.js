@@ -22,10 +22,7 @@ const createTimer = (days, hours, minutes, seconds) => {
   const hoursContainer = createTimeContainer(hours, 'hours');
   const minutesContainer = createTimeContainer(minutes, 'minutes');
   const secondsContainer = createTimeContainer(seconds, 'seconds');
-  const separator1 = createElement('span', ['timer__separator']);
-  const separator2 = createElement('span', ['timer__separator']);
-  const separator3 = createElement('span', ['timer__separator']);
-  timer.append(daysContainer, separator1, hoursContainer, separator2, minutesContainer, separator3, secondsContainer);
+  timer.append(daysContainer, hoursContainer, minutesContainer, secondsContainer);
   return timer;
 };
 
