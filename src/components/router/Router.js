@@ -13,6 +13,7 @@ import { logoContainer } from '@lay/header/Header';
 import { ctaBtn } from '@sections/cta/Cta';
 import { footer } from '@lay/footer/Footer';
 import { scrollBrowserToTop } from '@helpers/BrowserScroll';
+import { createButtonUp as btnUp } from '@common/button-up/ButtonUp';
 
 const basePath = '/christmas-shop';
 
@@ -40,6 +41,7 @@ const showViews = () => {
   checkHeaderVisible(currentPath === '/christmas-shop/' || currentPath === '/christmas-shop/gifts');
   main.innerHTML = '';
   currentPage();
+  btnUp();
   setActiveLink(currentPath);
 };
 
@@ -71,6 +73,7 @@ const linksConfig = () => {
 };
 
 window.onpopstate = showViews;
+window.onresize = btnUp;
 window.addEventListener('DOMContentLoaded', () => {
   showViews();
   linksConfig();
