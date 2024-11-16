@@ -36,6 +36,7 @@
         background: transparent;
         border: none;
         color: $white;
+        white-space: nowrap;
         @include text-header;
         @media screen and (max-width: 480px) {
           padding: 12px 8px;

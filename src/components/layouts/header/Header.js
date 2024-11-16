@@ -16,7 +16,7 @@ const logoIcon = createElement('svg', ['header__logo-icon'], `<svg xmlns="http:/
 </svg>`, {}, true);
 const logoTitle = createElement('h3', ['header__logo-title', 'user-select-none'], 'the gifts');
 const nav = createElement('nav', ['header__nav']);
-const burgerMenu = createElement('button', ['burger-menu', 'cursor-pointer']);
+const burgerMenu = createElement('button', ['burger-menu', 'cursor-pointer'], '', { 'aria-label': 'Open menu' });
 
 const createNavList = () => {
   const navList = createElement('ul', ['header__nav-list']);

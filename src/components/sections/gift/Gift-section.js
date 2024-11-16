@@ -18,20 +18,34 @@ const categories = [
 ];
 
 let activeTab = null;
-const firstWeekCard = [dataJson[1], dataJson[13], dataJson[0], dataJson[2], dataJson[12], dataJson[26], dataJson[14], dataJson[25], dataJson[15], dataJson[3], dataJson[24], dataJson[27]];
+
+const cardCategory = (filter) => {
+  cardsContainer.innerHTML = '';
+  const openCategory = 
+    filter === 'all' 
+      ? dataJson 
+      : dataJson.filter((item) => item.category.toLowerCase().slice(4) === filter.toLowerCase());
+  cardsContainer.append(...openCategory.map(createCard));
+};
 
 categories.forEach((category, index) => {
-  const tabIetm = createElement('li', ['tabs-item']);
-  const tabBtn = createElement('button', ['tabs-btn', 'user-select-none', 'cursor-pointer'], category.name);
+  const tabItem = createElement('li', ['tabs-item']);
+  const tabBtn = createElement('button', ['tabs-btn', 'user-select-none', 'cursor-pointer'], category.name, { 'aria-label': `Open card ${category.name}` });
   if (index === 0) {
     tabBtn.classList.add('active-tab');
     activeTab = tabBtn;
   }
-  tabIetm.append(tabBtn);
-  tabsContainer.append(tabIetm);
+  tabBtn.onclick = () => {
+    if (activeTab) activeTab.classList.remove('active-tab');
+    tabBtn.classList.add('active-tab');
+    activeTab = tabBtn;
+    cardCategory(category.filter);
+  };
+  tabItem.append(tabBtn);
+  tabsContainer.append(tabItem);
 });
 
-cardsContainer.append(...firstWeekCard.map(createCard));
+cardCategory('all');
 titleContainer.append(giftTitle);
 giftContainer.append(titleContainer);
 giftSection.append(giftContainer, tabsContainer, cardsContainer);
