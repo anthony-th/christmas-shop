@@ -22,6 +22,7 @@ export default defineConfig(({ command }) => {
       },
     },
     css: {
+      devSourcemap: true,
       preprocessorOptions: {
         scss: {
           api: 'modern-compiler',
