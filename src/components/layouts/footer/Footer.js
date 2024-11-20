@@ -12,7 +12,10 @@ const socials = createElement('ul', ['socials']);
 
 const createContactCard = (icon, href, text, description, target = '', rel = '') => {
   const contacsItem = createElement('li', ['contacts-item']);
-  const card = createElement('a', ['contact-card', 'cursor-pointer', 'user-select-none'], '', { href, target, rel });
+  const options = { href };
+  if (target) options.target = target;
+  if (rel) options.rel = rel;
+  const card = createElement('a', ['contact-card', 'cursor-pointer', 'user-select-none'], '', options);
   const iconElement = createElement('img', ['contact-card__icon'], '', { src: icon, alt: '' });
   const textElement = createElement('p', ['contact-card__link'], text);
   const descriptionText = createElement('p', ['contact-card__text'], description);

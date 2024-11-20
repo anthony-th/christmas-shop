@@ -14,7 +14,8 @@ const sliders = createElement('div', ['sliders']);
 const sliderNavigation = createElement('div', ['slider__navigation']);
 
 const createButtons = (classes, iconClasses, iconSvg, isDisabled = false, options = {}) => {
-  const buttonOptions = { ...options, ...(isDisabled ? { disabled: true } : {}) };
+  const buttonOptions = { ...options };
+  if (isDisabled) buttonOptions.disabled = '';
   const button = createElement('button', classes, '', buttonOptions);
   const icon = createElement('svg', iconClasses, iconSvg, {}, true);
   button.append(icon);
