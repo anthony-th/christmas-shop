@@ -9,8 +9,7 @@ const ctaTitle = createElement('h2', ['cta__title'], 'Ready to start your journe
 const ctaBtn = createElement('a', ['cta__btn', 'user-select-none'], 'Explore Magical Gifts', { href: '/gifts' });
 const ctaTimerContainer = createElement('div', ['cta__timer-container']);
 const ctaCaption = createElement('h3', ['cta__caption'], 'The New Year is Coming Soon...');
-
-const timer = createTimer('47', '5', '34', '12');
+const timer = createTimer();
 
 ctaTimerContainer.append(ctaCaption, timer);
 contentContainer.append(ctaTitle, ctaBtn, ctaTimerContainer);

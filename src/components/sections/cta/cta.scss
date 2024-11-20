@@ -47,12 +47,14 @@
           .timer__item {
             display: flex;
             width: 80px;
+            height: 52px;
             flex-direction: column;
             align-items: center;
             position: relative;
             .timer__title {
               color: $white;
               text-align: center;
+              min-height: 36px;
               @include text-header(152%, 3.84px, 24px);
             }
             .timer__description {
