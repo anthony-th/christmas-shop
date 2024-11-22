@@ -1,7 +1,7 @@
 import { createElement } from '@common/CreateElement';
 import { changeViewsUrl } from '@route/router';
 import { scrollBrowserToTop } from '@helpers/BrowserScroll';
-import { toggleMenu } from '@lay/header/Header';
+import { toggleMenu, nav } from '@lay/header/Header';
 
 const linksData = [
   { textContent: 'gifts', url: '/gifts' },
@@ -22,7 +22,9 @@ const clickLink = (event, link) => {
   const isGiftsPage = window.location.pathname === '/christmas-shop/gifts';
   const linkText = link.textContent;
   const targetUrl = `/christmas-shop` + link.url;
-  toggleMenu();
+  if (nav.classList.contains('menu-open')) {
+    toggleMenu();
+  }
   const anchorMove = (anchorUrl) => {
     history.pushState(null, null, anchorUrl);
     checkAnchorLink({ url: anchorUrl });
