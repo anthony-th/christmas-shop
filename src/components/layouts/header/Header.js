@@ -29,6 +29,8 @@ const createNavList = () => {
 
 const toggleMenu = () => {
   nav.classList.toggle('menu-open');
+  burgerMenu.classList.toggle('burger-menu-active');
+  document.body.classList.toggle('overflow-hidden');
 };
 
 burgerMenu.onclick = () => {
