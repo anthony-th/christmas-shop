@@ -39,4 +39,4 @@ burgerMenu.onclick = () => {
 logoContainer.append(logoIcon, logoTitle);
 nav.append(createNavList());
 header.append(logoContainer, nav, burgerMenu);
-export { header, logoContainer, toggleMenu, burgerMenu };
+export { header, logoContainer, toggleMenu, burgerMenu, nav };

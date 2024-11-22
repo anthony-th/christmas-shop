@@ -2,7 +2,7 @@ import '@scss/_typography.scss';
 import '@scss/_global.scss';
 import '@scss/_media_hover.scss';
 import '@scss/_modifiers.scss';
-import { header } from '@lay/header/Header';
+import { header, nav, toggleMenu } from '@lay/header/Header';
 import { setActiveLink } from '@lay/header/navigation/Navigation';
 import { main } from '@lay/main/Main';
 import { homePage } from '@page/HomePage';
@@ -65,6 +65,9 @@ const linksConfig = () => {
   });
   if (logoContainer) {
     logoContainer.onclick = (event) => {
+      if (nav.classList.contains('menu-open')) {
+        toggleMenu();
+      }
       event.preventDefault();
       scrollBrowserToTop();
       changeViewsUrl('/');
