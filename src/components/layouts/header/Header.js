@@ -38,7 +38,13 @@ burgerMenu.onclick = () => {
   // scrollBrowserToTop(); uncomment after crosscheck3 (reviewer1 not sleep)
 };
 
+const burgerMenuResize = () => {
+  if (window.innerWidth > 768 && nav.classList.contains('menu-open')) {
+    toggleMenu();
+  }
+};
+
 logoContainer.append(logoIcon, logoTitle);
 nav.append(createNavList());
 header.append(logoContainer, nav, burgerMenu);
-export { header, logoContainer, toggleMenu, burgerMenu, nav };
+export { header, logoContainer, toggleMenu, burgerMenu, nav, burgerMenuResize };
