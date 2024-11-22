@@ -1,6 +1,7 @@
 import './header.scss';
 import { createElement } from '@common/CreateElement';
 import { createNav } from '@lay/header/navigation/Navigation';
+import { scrollBrowserToTop } from '@helpers/BrowserScroll';
 
 const header = createElement('header', ['header']);
 const logoContainer = createElement('a', ['header__logo-container'], '', { href: './'});
@@ -26,7 +27,16 @@ const createNavList = () => {
   return navList;
 };
 
+const toggleMenu = () => {
+  nav.classList.toggle('menu-open');
+};
+
+burgerMenu.onclick = () => {
+  toggleMenu();
+  scrollBrowserToTop();
+};
+
 logoContainer.append(logoIcon, logoTitle);
 nav.append(createNavList());
 header.append(logoContainer, nav, burgerMenu);
-export { header, logoContainer };
+export { header, logoContainer, toggleMenu, burgerMenu };
