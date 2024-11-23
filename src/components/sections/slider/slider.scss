@@ -57,13 +57,14 @@
         border: 1px solid $white;
         &:disabled {
           border-color: $white-40;
+          cursor: default;
+          .slider__icon {
+            opacity: 0.4;
+          }
         }
         svg {
           width: 24px;
           height: 24px;
-        }
-        .inactive-arrow {
-          opacity: 0.4;
         }
       }
     }

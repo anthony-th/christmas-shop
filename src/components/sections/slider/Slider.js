@@ -23,8 +23,8 @@ const createButtons = (classes, iconClasses, iconSvg, isDisabled = false, option
 };
 
 const leftBtn = createButtons (
-  ['slider__button'],
-  ['slider__icon', 'inactive-arrow'],
+  ['slider__button', 'cursor-pointer'],
+  ['slider__icon'],
   `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
      <path d="M18.5 12H6M6 12L12 6M6 12L12 18" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
    </svg>`,
@@ -43,7 +43,9 @@ const rightBtn = createButtons (
 );
 
 const texts = ['Live', 'create', 'Love', 'dream'];
+const totalSlides = texts.length;
 const imageSrc = [snowman, christmasTrees, christmasTreeBall, fairytaleHouse];
+let currentSlide = 0;
 
 const createItems = (texts, imageSrc) => {
   texts.forEach((text, index) => {
@@ -55,7 +57,28 @@ const createItems = (texts, imageSrc) => {
   });
 };
 
+const slidePosition = () => {
+  const offsetWidth = -currentSlide * 240;
+  sliders.style.transform = `translateX(${offsetWidth}px)`;
+};
+
+const buttonsState = () => {
+  leftBtn.disabled = currentSlide === 0;
+  rightBtn.disabled = currentSlide === totalSlides - 1;
+}
+
+const slideDirection = (direction) => {
+  if ((direction === 'left' && currentSlide > 0) || (direction === 'right' && currentSlide < totalSlides - 1)) {
+    currentSlide += (direction === 'left' ? -1 : 1);
+  }
+  slidePosition();
+  buttonsState();
+}
+
+rightBtn.onclick = () => slideDirection('right');
+leftBtn.onclick = () => slideDirection('left');
 createItems(texts, imageSrc);
+buttonsState();
 
 sliderTextContainer.append(sliderCaption, sliderTitle);
 sliderNavigation.append(leftBtn, rightBtn);
