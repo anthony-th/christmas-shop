@@ -1,7 +1,6 @@
 import './header.scss';
 import { createElement } from '@common/CreateElement';
 import { createNav } from '@lay/header/navigation/Navigation';
-// import { scrollBrowserToTop } from '@helpers/BrowserScroll';
 
 const header = createElement('header', ['header']);
 const logoContainer = createElement('a', ['header__logo-container'], '', { href: './'});
@@ -35,7 +34,6 @@ const toggleMenu = () => {
 
 burgerMenu.onclick = () => {
   toggleMenu();
-  // scrollBrowserToTop(); uncomment after crosscheck3 (reviewer1 not sleep)
 };
 
 const burgerMenuResize = () => {
