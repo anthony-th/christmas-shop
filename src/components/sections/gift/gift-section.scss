@@ -4,42 +4,42 @@
 .gift-section {
   width: 100%;
   @include flex(center, normal, column);
-  gap: 20px;
-  border-radius: 20px;
+  gap: 1.25rem;
+  border-radius: 1.25rem;
   background: $bg-garland center top / contain no-repeat, $primary;
   .gift-container {
     @include flex(center, normal, column);
-    max-width: 1276px;
-    gap: 20px;
+    max-width: 79.75rem;
+    gap: 1.25rem;
     .title-container {
       display: flex;
-      max-width: 426px;
+      max-width: 26.625rem;
       .gift-title {
         color: $white;
         text-align: center;
-        @include text-header(150%, 5.76px, 32px);
+        @include text-header(150%, 0.36rem, 2rem);
       }
     }
   }
   .tabs-container {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 0.5rem;
     @media screen and (max-width: 550px) {
-      gap: 0px;
+      gap: 0rem;
     }
     .tabs-item {
       .tabs-btn {
         @include flex-center;
-        padding: 12px 20px;
-        border-radius: 12px;
+        padding: 0.75rem 1.25rem;
+        border-radius: 0.75rem;
         background: transparent;
         border: none;
         color: $white;
         white-space: nowrap;
         @include text-header;
         @media screen and (max-width: 480px) {
-          padding: 12px 8px;
+          padding: 0.75rem 0.5rem;
         }
       }
       .active-tab {

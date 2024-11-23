@@ -4,14 +4,14 @@
 .cards-container {
   @include flex(flex-start, center);
   align-content: flex-start;
-  gap: 12px;
+  gap: 0.75rem;
   flex-wrap: wrap;
   .card-item {
     .card {
       @include flex(center, normal, column);
-      width: 310px;
-      height: 342px;
-      border-radius: 20px;
+      width: 19.375rem;
+      height: 21.375rem;
+      border-radius: 1.25rem;
       background: $bg-color-white;
       position: relative;
       .card__button {
@@ -21,27 +21,27 @@
         left: 0;
         right: 0;
         bottom: 0;
-        border-radius: 20px;
+        border-radius: 1.25rem;
         background: transparent;
         border: none;
       }
       .card__image-container {
-        width: 310px;
-        height: 230px;
+        width: 19.375rem;
+        height: 14.375rem;
         .card__image {
-          width: 310px;
-          height: 230px;
+          width: 19.375rem;
+          height: 14.375rem;
         }
       }
       .card__text-container {
         background-color: $white;
         display: flex;
-        padding: 20px;
+        padding: 1.25rem;
         flex-direction: column;
-        gap: 8px;
+        gap: 0.5rem;
         flex: 1 0 0;
         width: 100%;
-        border-radius: 20px;
+        border-radius: 1.25rem;
         .card__subtitle {
           @include text-header;
           &--for-work {
@@ -60,7 +60,7 @@
           overflow: hidden;
           color: $dark;
           text-overflow: ellipsis;
-          @include text-header(152%, 1.28px, 16px);
+          @include text-header(152%, 0.08rem, 1rem);
         }
       }
     }

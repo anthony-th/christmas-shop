@@ -11,7 +11,7 @@
   justify-content: center;
 }
 
-@mixin text-header($line-height: 130%, $letter-spacing: 0.6px, $size: 12px, $font-family: Montserrat, $font-style: normal, $weight: 600, $transform: uppercase) {
+@mixin text-header($line-height: 130%, $letter-spacing: 0.0375rem, $size: 0.75rem, $font-family: Montserrat, $font-style: normal, $weight: 600, $transform: uppercase) {
   font-family: $font-family;
   font-size: $size;
   font-style: $font-style;
@@ -21,7 +21,7 @@
   letter-spacing: $letter-spacing;
 }
 
-@mixin text-caption($line-height: 100%, $letter-spacing: 1.2px, $font-family: Allura, $size: 24px, $font-style: normal, $weight: 400) {
+@mixin text-caption($line-height: 100%, $letter-spacing: 0.075rem, $font-family: Allura, $size: 1.5rem, $font-style: normal, $weight: 400) {
   font-family: $font-family;
   font-size: $size;
   font-style: $font-style;
@@ -30,7 +30,7 @@
   letter-spacing: $letter-spacing;
 }
 
-@mixin text-paragraph($line-height: 148%, $font-family: Montserrat, $size: 16px, $font-style: normal, $weight: 400) {
+@mixin text-paragraph($line-height: 148%, $font-family: Montserrat, $size: 1rem, $font-style: normal, $weight: 400) {
   font-family: $font-family;
   font-size: $size;
   font-style: $font-style;

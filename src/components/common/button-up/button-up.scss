@@ -3,13 +3,13 @@
 
 .button-up {
   @include flex-center;
-  width: 56px;
-  height: 56px;
+  width: 3.5rem;
+  height: 3.5rem;
   position: fixed;
-  right: 8px;
-  bottom: 8px;
-  border-radius: 100px;
-  border: 1px solid $primary;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  border-radius: 6.25rem;
+  border: 0.0625rem solid $primary;
   background: $white;
 }
 

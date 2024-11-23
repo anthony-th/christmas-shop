@@ -4,23 +4,23 @@
 
 .modal {
   @include flex(center, center, column);
-  max-width: 400px;
+  max-width: 25rem;
   position: fixed;
   z-index: 10;
-  min-width: 400px;
+  min-width: 25rem;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   background: $bg-color-white;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   opacity: 0;
   animation: modal-fade-in 0.7s ease forwards;
   @media screen and (max-width: 480px) {
-    min-width: 364px;
+    min-width: 22.75rem;
   }
   &__image-container {
     @include flex(center, center, column);
-    height: 230px;
+    height: 14.375rem;
     width: 100%;
     overflow: hidden;
     .modal__image {
@@ -33,15 +33,15 @@
   }
   &__description-container {
     @include flex(flex-start, normal, column);
-    padding:20px;
-    gap: 20px;
+    padding:1.25rem;
+    gap: 1.25rem;
     width: 100%;
     background: #fff;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     .modal__text-container {
       @include flex(flex-start, normal, column);
       width: 100%;
-      gap: 8px;
+      gap: 0.5rem;
       .modal__subtitle {
         @include text-header;
         &--for-work {
@@ -58,7 +58,7 @@
       }
       .modal__title {
         color: $dark;
-        @include text-header(152%, 1.28px, 16px);
+        @include text-header(152%, 0.08rem, 1rem);
       }
       .modal__paragraph {
         color: $dark;
@@ -69,7 +69,7 @@
         width: 100%;
         .superpowers__information {
           @include flex(center, normal, row);
-          gap: 12px;
+          gap: 0.75rem;
           width: 100%;
           .superpowers__title {
             color: $dark;
@@ -83,19 +83,19 @@
           .superpowers__stars {
             display: flex;
             align-items: flex-start;
-            gap: 8px;
-            min-width: 112px;
+            gap: 0.5rem;
+            min-width: 7rem;
           }
         }
       }
     }
   }
   .modal__cancel {
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     position: absolute;
-    right: 12px;
-    top: 12px;
+    right: 0.75rem;
+    top: 0.75rem;
     @include flex-center;
     border: none;
   }

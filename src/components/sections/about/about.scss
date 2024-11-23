@@ -8,11 +8,11 @@
   background: $bg-snow 50% / cover no-repeat, $primary;
   .about__container {
     display: flex;
-    max-width: 1276px;
+    max-width: 79.75rem;
     width: 100%;
     align-items: center;
     flex: 1 0 0;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     background: $white;
     @media screen and (max-width: 670px) {
       flex-direction: column;
@@ -25,12 +25,12 @@
       .about__text-block {
         @include flex(flex-start, center, column);
         display: flex;
-        max-width: 426px;
-        padding: 60px 0px;
-        margin: 0 60px;
-        gap: 20px;
+        max-width: 26.625rem;
+        padding: 3.75rem 0rem;
+        margin: 0 3.75rem;
+        gap: 1.25rem;
         @media screen and (max-width: 670px) {
-          margin: 0 20px;
+          margin: 0 1.25rem;
           max-width: 100%;
         }
         .about__caption {
@@ -39,7 +39,7 @@
         }
         .about__title {
           color: $dark;
-          @include text-header(152%, 3.84px, 24px);
+          @include text-header(152%, 0.24rem, 1.5rem);
         }
         .about__paragraph {
           color: $dark;
@@ -50,9 +50,9 @@
     .about__img-container {
       flex: 1 0 0;
       @include flex(center, center, column);
-      height: 528px;
+      height: 33rem;
       width: 100%;
-      border-radius: 20px;
+      border-radius: 1.25rem;
       background: url('../../../assets/images/santa.avif') 50% / cover no-repeat;
       @media screen and (max-width: 670px) {
         flex: initial;
