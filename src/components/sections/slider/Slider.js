@@ -10,7 +10,8 @@ const sliderContainer = createElement('div', ['slider__container']);
 const sliderTextContainer = createElement('div', ['slider__text-container']);
 const sliderCaption = createElement('h3', ['slider__caption'], 'Become Happier!');
 const sliderTitle = createElement('h2', ['slider__title'], 'in the new 2025');
-const sliders = createElement('div', ['sliders']);
+const sliderWrapper = createElement('div', ['slider__wrapper']);
+const sliderTrack = createElement('div', ['slider__track']);
 const sliderNavigation = createElement('div', ['slider__navigation']);
 
 const createButtons = (classes, iconClasses, iconSvg, isDisabled = false, options = {}) => {
@@ -53,13 +54,13 @@ const createItems = (texts, imageSrc) => {
     const sliderImg = createElement('img', ['slider__image'], '', { src: imageSrc[index], alt: 'slider image' });
     const sliderText = createElement('figcaption', ['slider__text'], text);
     sliderElement.append(sliderImg, sliderText);
-    sliders.append(sliderElement);
+    sliderTrack.append(sliderElement);
   });
 };
 
 const slidePosition = () => {
   const offsetWidth = -currentSlide * 240;
-  sliders.style.transform = `translateX(${offsetWidth}px)`;
+  sliderWrapper.style.transform = `translateX(${offsetWidth}px)`;
 };
 
 const buttonsState = () => {
@@ -82,6 +83,7 @@ buttonsState();
 
 sliderTextContainer.append(sliderCaption, sliderTitle);
 sliderNavigation.append(leftBtn, rightBtn);
-sliderContainer.append(sliderTextContainer, sliders, sliderNavigation);
+sliderWrapper.append(sliderTrack);
+sliderContainer.append(sliderTextContainer, sliderWrapper, sliderNavigation);
 sliderSection.append(sliderContainer);
 export { sliderSection };

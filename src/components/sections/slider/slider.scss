@@ -24,23 +24,26 @@
         @include text-header(152%, 0.24rem, 1.5rem);
       }
     }
-    .sliders {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
+    .slider__wrapper {
       width: 100%;
-      .slider-item {
-        @include flex(center, center, row-reverse);
+      .slider__track {
+        display: flex;
+        align-items: center;
         gap: 1.25rem;
-        .slider__image {
-          width: 12.5rem;
-          height: 12.5rem;
-          border-radius: 1.25rem;
-        }
-        .slider__text {
-          color: $white;
-          text-align: center;
-          @include text-header(normal, normal, 5rem);
+        width: 100%;
+        .slider-item {
+          @include flex(center, center, row-reverse);
+          gap: 1.25rem;
+          .slider__image {
+            width: 12.5rem;
+            height: 12.5rem;
+            border-radius: 1.25rem;
+          }
+          .slider__text {
+            color: $white;
+            text-align: center;
+            @include text-header(normal, normal, 5rem);
+          }
         }
       }
     }
