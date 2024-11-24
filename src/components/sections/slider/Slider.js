@@ -44,7 +44,6 @@ const rightBtn = createButtons (
 );
 
 const texts = ['Live', 'create', 'Love', 'dream'];
-const totalSlides = texts.length;
 const imageSrc = [snowman, christmasTrees, christmasTreeBall, fairytaleHouse];
 let currentSlide = 0;
 
@@ -58,32 +57,40 @@ const createItems = (texts, imageSrc) => {
   });
 };
 
-const slidePosition = () => {
-  const offsetWidth = -currentSlide * 240;
-  sliderWrapper.style.transform = `translateX(${offsetWidth}px)`;
+const updateState = () => {
+  const isMobile = window.innerWidth < 769;
+  const maxMoves = isMobile ? 6 : 3;
+  const moveDistance = (sliderTrack.scrollWidth - sliderWrapper.offsetWidth) / maxMoves;
+  const btnDistance = -(currentSlide * moveDistance);
+  sliderTrack.style.transform = `translateX(${btnDistance}px)`;
+  leftBtn.disabled = currentSlide === 0;
+  rightBtn.disabled = currentSlide === maxMoves;
 };
 
-const buttonsState = () => {
-  leftBtn.disabled = currentSlide === 0;
-  rightBtn.disabled = currentSlide === totalSlides - 1;
-}
-
 const slideDirection = (direction) => {
-  if ((direction === 'left' && currentSlide > 0) || (direction === 'right' && currentSlide < totalSlides - 1)) {
+  const isMobile = window.innerWidth < 769;
+  const maxMoves = isMobile ? 6 : 3;
+  if ((direction === 'left' && currentSlide > 0) || (direction === 'right' && currentSlide < maxMoves)) {
     currentSlide += (direction === 'left' ? -1 : 1);
   }
-  slidePosition();
-  buttonsState();
-}
+  updateState();
+};
+
+const resetSlider = () => {
+  if (currentSlide !== 0) {
+    currentSlide = 0;
+    updateState();
+  }
+};
 
 rightBtn.onclick = () => slideDirection('right');
 leftBtn.onclick = () => slideDirection('left');
 createItems(texts, imageSrc);
-buttonsState();
+updateState();
 
 sliderTextContainer.append(sliderCaption, sliderTitle);
 sliderNavigation.append(leftBtn, rightBtn);
 sliderWrapper.append(sliderTrack);
 sliderContainer.append(sliderTextContainer, sliderWrapper, sliderNavigation);
 sliderSection.append(sliderContainer);
-export { sliderSection };
+export { sliderSection, resetSlider };

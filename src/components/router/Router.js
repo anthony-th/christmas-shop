@@ -14,6 +14,7 @@ import { ctaBtn } from '@sections/cta/Cta';
 import { footer } from '@lay/footer/Footer';
 import { scrollBrowserToTop } from '@helpers/BrowserScroll';
 import { createButtonUp as btnUp, checkTop } from '@common/button-up/ButtonUp';
+import { resetSlider } from '@sections/slider/Slider';
 
 const basePath = '/christmas-shop';
 
@@ -79,6 +80,7 @@ window.onpopstate = showViews;
 window.onresize = () => {
   burgerMenuResize();
   btnUp();
+  resetSlider();
 };
 window.onscroll = checkTop;
 window.addEventListener('DOMContentLoaded', () => {
