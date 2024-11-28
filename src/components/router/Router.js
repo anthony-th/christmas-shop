@@ -86,6 +86,6 @@ window.onscroll = checkTop;
 window.addEventListener('DOMContentLoaded', () => {
   showViews();
   linksConfig();
-});
+}, { once: true });
 
 export { changeViewsUrl };
