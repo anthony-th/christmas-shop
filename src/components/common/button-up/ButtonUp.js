@@ -32,7 +32,7 @@ const createButtonUp = () => {
 }
 
 const checkTop = () => {
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+  if (document.body.scrollTop >= 300 || document.documentElement.scrollTop >= 300) {
     buttonUp.className = 'button-up cursor-pointer';
   } else {
     buttonUp.className = 'button-up cursor-pointer display-none';
