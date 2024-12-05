@@ -26,6 +26,9 @@ const createTimer = () => {
     startTime = time;
     const currentDate = new Date();
     const newYear = new Date(Date.UTC(currentDate.getUTCFullYear() + 1, 0, 1));
+    if (currentDate >= newYear) {
+      newYear = new Date(Date.UTC(currentDate.getUTCFullYear() + 2, 0, 1)); 
+    }
     const remainingTime = newYear - currentDate;
     const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
     const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
