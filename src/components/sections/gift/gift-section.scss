@@ -37,13 +37,29 @@
         border: none;
         color: $white;
         white-space: nowrap;
+        position: relative;
         @include text-header;
         @media screen and (max-width: 480px) {
           padding: 0.75rem 0.5rem;
         }
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          background: transparent;
+          transition: all 0.5s ease-in-out;
+          width: 0%;
+          height: 100%;
+          border-radius: 0.75rem;
+        }
       }
       .active-tab {
-        background: $white-20;
+        &::before {
+          content: '';
+          width: 100%;
+          background: $white-20;
+        }
       }
     }
   }
