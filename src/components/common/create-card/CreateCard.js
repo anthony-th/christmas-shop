@@ -11,7 +11,7 @@ const images = {
   'for-work': giftWork,
 }
 
-const createCard = (item) => {
+const createCard = (item, headingLevels = { subtitle: 'h3', title: 'h4' }) => {
   const cardItem = createElement('li', ['card-item', 'cursor-pointer']);
   const card = createElement('article', ['card', 'cursor-pointer']);
   const cardBtn = createElement('button', ['card__button', 'cursor-pointer'], '', { 'aria-label': 'Open card' });
@@ -23,8 +23,8 @@ const createCard = (item) => {
     alt: item.name,
   });
   const subtitleClass = `card__subtitle--${item.category.toLowerCase().replace(/\s+/g, '-')}`;
-  const cardSubtitle = createElement('h4', ['card__subtitle', subtitleClass], item.category);
-  const cardTitle = createElement('h3', ['card__title'], item.name);
+  const cardSubtitle = createElement(headingLevels.subtitle, ['card__subtitle', subtitleClass], item.category);
+  const cardTitle = createElement(headingLevels.title, ['card__title'], item.name);
   
   cardTextContainer.append(cardSubtitle, cardTitle);
   cardImageContainer.append(cardImage);

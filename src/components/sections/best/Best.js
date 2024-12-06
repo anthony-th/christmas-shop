@@ -16,7 +16,7 @@ const getRandomCards = (array, quantity) => {
 
 const randomCard = getRandomCards(dataJson, 4);
 
-cardsContainer.append(...randomCard.map(createCard));
+cardsContainer.append(...randomCard.map(item => createCard(item)));
 bestTextContainer.append(bestCaption, bestTitle);
 bestContainer.append(bestTextContainer, cardsContainer);
 bestSection.append(bestContainer);

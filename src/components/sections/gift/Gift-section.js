@@ -25,7 +25,7 @@ const cardCategory = (filter) => {
     filter === 'all' 
       ? dataJson 
       : dataJson.filter((item) => item.category.toLowerCase().slice(4) === filter.toLowerCase());
-  cardsContainer.append(...openCategory.map(createCard));
+  cardsContainer.append(...openCategory.map(item => createCard(item, { subtitle: 'h2', title: 'h3' })));
 };
 
 categories.forEach((category, index) => {
