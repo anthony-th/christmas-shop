@@ -25,7 +25,7 @@ const createTimer = () => {
     }
     startTime = time;
     const currentDate = new Date();
-    const newYear = new Date(Date.UTC(currentDate.getUTCFullYear() + 1, 0, 1));
+    let newYear = new Date(Date.UTC(currentDate.getUTCFullYear() + 1, 0, 1));
     if (currentDate >= newYear) {
       newYear = new Date(Date.UTC(currentDate.getUTCFullYear() + 2, 0, 1)); 
     }
