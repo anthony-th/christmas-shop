@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.5s ease-in-out;
+  text-decoration: none;
+}
+
+body {
+  min-width: 22.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
+li {
+  list-style: none;
+}
+
+.section {
+  padding: 3.75rem 0.5rem;
+}

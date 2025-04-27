@@ -1,0 +1,66 @@
+@use '../../../assets/styles/variables' as *;
+@use '../../../assets/styles/mixins' as *;
+
+.gift-section {
+  width: 100%;
+  @include flex(center, normal, column);
+  gap: 1.25rem;
+  border-radius: 1.25rem;
+  background: $bg-garland center top / contain no-repeat, $primary;
+  .gift-container {
+    @include flex(center, normal, column);
+    max-width: 79.75rem;
+    gap: 1.25rem;
+    .title-container {
+      display: flex;
+      max-width: 26.625rem;
+      .gift-title {
+        color: $white;
+        text-align: center;
+        @include text-header(150%, 0.36rem, 2rem);
+      }
+    }
+  }
+  .tabs-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    @media screen and (max-width: 550px) {
+      gap: 0rem;
+    }
+    .tabs-item {
+      .tabs-btn {
+        @include flex-center;
+        padding: 0.75rem 1.25rem;
+        border-radius: 0.75rem;
+        background: transparent;
+        border: none;
+        color: $white;
+        white-space: nowrap;
+        position: relative;
+        @include text-header;
+        @media screen and (max-width: 480px) {
+          padding: 0.75rem 0.5rem;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          background: transparent;
+          transition: all 0.5s ease-in-out;
+          width: 0%;
+          height: 100%;
+          border-radius: 0.75rem;
+        }
+      }
+      .active-tab {
+        &::before {
+          content: '';
+          width: 100%;
+          background: $white-20;
+        }
+      }
+    }
+  }
+}
