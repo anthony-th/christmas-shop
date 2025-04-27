@@ -1,4 +1,4 @@
-# Christmas Shop landing page
+# Christmas Shop Single Page Application
 
 ![Static Badge](https://img.shields.io/badge/JavaScript-323330?style=flat&logo=javascript&logoColor=F7DF1E) ![Static Badge](https://img.shields.io/badge/Sass-CC6699?logo=sass&logoColor=white) ![Static Badge](https://img.shields.io/badge/Vite-5c5c5c?style=flat&logo=vite) ![Static Badge](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) ![Static Badge](https://img.shields.io/badge/Figma-orange?logo=figma&logoColor=white) ![Static Badge](https://img.shields.io/badge/PerfectPixel-blue)
 
