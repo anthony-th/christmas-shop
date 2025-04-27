@@ -11,7 +11,7 @@ export default defineConfig(({ command }) => {
     base: command === 'serve' ? './' : '/christmas-shop/',
     build: {
       sourcemap: true,
-      outDir: '../dist',
+      outDir: resolve(__dirname, 'dist/christmas-shop/'),
       emptyOutDir: true,
       rollupOptions: {
         input: {

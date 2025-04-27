@@ -15,11 +15,13 @@
       }
     }
   }
-  .main-404 {
-    .page-404__link {
-      &:hover {
-        color: $dark;
-        border-color: $dark;
+  .page-404 {
+    .page-404__container {
+      .page-404__link {
+        &:hover {
+          color: $dark;
+          border-color: $dark;
+        }
       }
     }
   }

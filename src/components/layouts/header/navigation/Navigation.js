@@ -2,26 +2,27 @@ import { createElement } from '@common/CreateElement';
 import { changeViewsUrl } from '@route/router';
 import { scrollBrowserToTop } from '@helpers/BrowserScroll';
 import { toggleMenu, nav } from '@lay/header/Header';
+import { BASE_PATH } from '@helpers/Constants';
 
 const linksData = [
-  { textContent: 'gifts', url: '/gifts' },
-  { textContent: 'about', url: '/#about' },
-  { textContent: 'best', url: '/#best' },
-  { textContent: 'contacts', url: '/#contacts' },
+  { textContent: 'gifts', url: 'gifts' },
+  { textContent: 'about', url: '#about' },
+  { textContent: 'best', url: '#best' },
+  { textContent: 'contacts', url: '#contacts' },
 ];
 
 const navLinks = linksData.map((link) => {
-  const linkElement = createElement('a', ['header__nav-link', 'user-select-none'], link.textContent, { href: `/christmas-shop` + link.url });
+  const linkElement = createElement('a', ['header__nav-link', 'user-select-none'], link.textContent, { href: BASE_PATH + link.url });
   linkElement.onclick = (event) => clickLink(event, link);
   return linkElement;
 });
 
 const clickLink = (event, link) => {
   event.preventDefault();
-  const isHomePage = window.location.pathname === '/christmas-shop/';
-  const isGiftsPage = window.location.pathname === '/christmas-shop/gifts';
+  const isHomePage = window.location.pathname === BASE_PATH;
+  const isGiftsPage = window.location.pathname === BASE_PATH + 'gifts';
   const linkText = link.textContent;
-  const targetUrl = `/christmas-shop` + link.url;
+  const targetUrl = BASE_PATH + link.url;
   if (nav.classList.contains('menu-open')) {
     toggleMenu();
   }
@@ -34,14 +35,14 @@ const clickLink = (event, link) => {
       if (isGiftsPage) {
         history.pushState(null, null, targetUrl);
       } else {
-        changeViewsUrl('/gifts');
+        changeViewsUrl('gifts');
         scrollBrowserToTop();
       }
       break;
     case 'contacts':
       if (isGiftsPage) {
         anchorMove(targetUrl); 
-        history.pushState(null, null, '/christmas-shop/gifts#contacts');               
+        history.pushState(null, null, BASE_PATH + 'gifts#contacts');            
       } else if (isHomePage) {
         anchorMove(targetUrl);
       }
@@ -51,7 +52,7 @@ const clickLink = (event, link) => {
       if (isHomePage) {
         anchorMove(targetUrl);
       } else if (isGiftsPage) {
-        changeViewsUrl('/');
+        changeViewsUrl('');
         anchorMove(targetUrl);
       }
       break;
@@ -59,13 +60,13 @@ const clickLink = (event, link) => {
 };
 
 const checkAnchorLink = (link) => {
-  if (link.url.startsWith('/christmas-shop/#')) {
-    const urlWithSlash = link.url.slice('/christmas-shop/#'.length);
+  if (link.url.startsWith(BASE_PATH + '#')) {
+    const urlWithSlash = link.url.slice((BASE_PATH + '#').length);
     if (window[urlWithSlash]) {
       window[urlWithSlash].scrollIntoView();
     }
   } else {
-    setActiveLink(`/christmas-shop` + link.url);
+    setActiveLink(BASE_PATH + link.url);
   }
 };
 
@@ -80,7 +81,7 @@ const createNav = () => {
 const setActiveLink = (currentUrl) => {
   navLinks.forEach((link) => {
     const linkUrl = link.getAttribute('href');
-    const urlActive = linkUrl === currentUrl || (currentUrl.startsWith('/christmas-shop/gifts') && linkUrl === '/christmas-shop/gifts');
+    const urlActive = linkUrl === currentUrl || (currentUrl.startsWith(BASE_PATH + 'gifts') && linkUrl === BASE_PATH + 'gifts');
     link.classList.toggle('link-active', urlActive);
   });
 };

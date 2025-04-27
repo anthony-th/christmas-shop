@@ -2,13 +2,13 @@
 @use '../../../assets/styles/mixins' as *;
 
 .page-404 {
-  min-height: 100dvh;
+  min-height: 100vh;
   @include flex-center;
   background-color: $white-40;
 }
 
-.main-404 {
-  min-height: 100%;
+.page-404__container {
+  @include flex(center, center, column);
   max-width: fit-content;
   justify-content: center;
   gap: 0.625rem;
@@ -38,6 +38,7 @@
     border: 0.0625rem solid $white;
     font-size: 1.25rem;
     border-radius: 0.625rem;
+    background: transparent;
     @media screen and (max-width: 600px) {
       font-size: 0.75rem;
       padding: 0.3125rem 0.625rem;

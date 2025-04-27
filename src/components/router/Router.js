@@ -15,13 +15,12 @@ import { footer } from '@lay/footer/Footer';
 import { scrollBrowserToTop } from '@helpers/BrowserScroll';
 import { createButtonUp as btnUp, checkTop } from '@common/button-up/ButtonUp';
 import { resetSlider } from '@sections/slider/Slider';
-
-const basePath = '/christmas-shop';
+import { BASE_PATH } from '@helpers/Constants';
 
 const views = {
   404: page404,
-  '/christmas-shop/': homePage,
-  '/christmas-shop/gifts': giftsPage,
+  [BASE_PATH]: homePage,
+  [BASE_PATH + 'gifts']: giftsPage,
 };
 
 const checkHeaderVisible = (visibleHeader) => {
@@ -39,7 +38,7 @@ const checkHeaderVisible = (visibleHeader) => {
 const showViews = () => {
   const currentPath = window.location.pathname;
   const currentPage = views[currentPath] || views[404];
-  checkHeaderVisible(currentPath === '/christmas-shop/' || currentPath === '/christmas-shop/gifts');
+  checkHeaderVisible(currentPath === BASE_PATH || currentPath === BASE_PATH + 'gifts');
   main.innerHTML = '';
   currentPage();
   btnUp();
@@ -47,7 +46,7 @@ const showViews = () => {
 };
 
 const changeViewsUrl = (url) => {
-  history.pushState(null, null, basePath + url);
+  history.pushState(null, null, BASE_PATH + url);
   showViews();
 };
 
@@ -57,10 +56,10 @@ const linksConfig = () => {
     if (button) {
       button.onclick = (event) => {
         event.preventDefault();
-        const isHomePage = window.location.pathname === '/christmas-shop/';
+        const isHomePage = window.location.pathname === BASE_PATH;
         const buttonName = button === ctaBtn ? 'ctaBtn' : 'heroButton';
         scrollBrowserToTop(isHomePage, buttonName); 
-        changeViewsUrl('/gifts');
+        changeViewsUrl('gifts');
       };
     };
   });
@@ -71,7 +70,7 @@ const linksConfig = () => {
       }
       event.preventDefault();
       scrollBrowserToTop();
-      changeViewsUrl('/');
+      changeViewsUrl('');
     };
   }
 };

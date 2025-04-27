@@ -23,7 +23,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "vite build && npx gh-pages -d dist -e ./"
+    "deploy": "vite build && npx gh-pages -d dist/christmas-shop -e ./"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
