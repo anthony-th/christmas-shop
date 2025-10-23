@@ -10,4 +10,4 @@ const homePage = () => {
   main.prepend(heroSection, aboutSection, sliderSection, bestSection, ctaSection);
 }
 
-export { homePage };
+export default homePage;

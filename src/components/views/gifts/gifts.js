@@ -6,4 +6,4 @@ const giftsPage = () => {
   main.prepend(giftSection);
 }
 
-export { giftsPage };
+export default giftsPage;
