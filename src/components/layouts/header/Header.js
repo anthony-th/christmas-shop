@@ -1,6 +1,6 @@
 import './header.scss';
 import { createElement } from '@common/CreateElement';
-import { createNav } from '@lay/header/navigation/Navigation';
+import { createNav } from '@lay/header/navigation';
 
 const header = createElement('header', ['header']);
 const logoContainer = createElement('a', ['header__logo-container'], '', { href: './'});

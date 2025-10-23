@@ -1,11 +1,11 @@
 import '@scss/_typography.scss';
 import '@scss/_global.scss';
-import './404.scss';
+import './not-found.scss';
 import { createElement } from '@common/CreateElement';
-import { main } from '@lay/main/Main';
+import main from '@lay/main';
 import { changeViewsUrl } from '@route/Router';
 
-const page404 = () => {
+const notFound = () => {
   document.title = "404";
   main.innerHTML = '';
   const title = createElement('h2', ['page-404__title'], '404');
@@ -26,4 +26,4 @@ const page404 = () => {
 };
 
 
-export { page404 };
+export default notFound;

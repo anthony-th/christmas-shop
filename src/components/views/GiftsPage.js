@@ -1,4 +1,4 @@
-import { main } from '@lay/main/Main';
+import main from '@lay/main';
 import { giftSection } from '@sections/gift/Gift-section';
 
 const giftsPage = () => {

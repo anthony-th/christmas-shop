@@ -2,12 +2,12 @@ import '@scss/_typography.scss';
 import '@scss/_global.scss';
 import '@scss/_media_hover.scss';
 import '@scss/_modifiers.scss';
-import { header, nav, toggleMenu, burgerMenuResize } from '@lay/header/Header';
+import { header, nav, toggleMenu, burgerMenuResize } from '@lay/header';
 import { setActiveLink } from '@lay/header/navigation/Navigation';
-import { main } from '@lay/main/Main';
+import main from '@lay/main';
 import { homePage } from '@page/HomePage';
 import { giftsPage } from '@page/GiftsPage';
-import { page404 } from '@page/404/404';
+import notFound from '@page/not-found';
 import { heroButton } from '@sections/hero/Hero';
 import { logoContainer } from '@lay/header/Header';
 import { ctaBtn } from '@sections/cta/Cta';
@@ -18,7 +18,7 @@ import { resetSlider } from '@sections/slider/Slider';
 import { BASE_PATH } from '@helpers/Constants';
 
 const views = {
-  404: page404,
+  404: notFound,
   [BASE_PATH]: homePage,
   [BASE_PATH + 'gifts']: giftsPage,
 };

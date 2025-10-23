@@ -1,4 +1,4 @@
-import { main } from '@lay/main/Main';
+import main from '@lay/main';
 import { heroSection } from '@sections/hero/Hero';
 import { aboutSection } from '@sections/about/About';
 import { sliderSection } from '@sections/slider/Slider';
