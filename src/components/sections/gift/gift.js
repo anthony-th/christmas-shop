@@ -18,12 +18,13 @@ const categories = [
 ];
 
 let activeTab = null;
+const randomCards = [...dataJson].sort(() => Math.random() - 0.5);
 
 const cardCategory = (filter) => {
   cardsContainer.innerHTML = '';
   const openCategory = 
     filter === 'all' 
-      ? dataJson 
+      ? randomCards 
       : dataJson.filter((item) => item.category.toLowerCase().slice(4) === filter.toLowerCase());
   cardsContainer.append(...openCategory.map(item => createCard(item, { subtitle: 'h2', title: 'h3' })));
 };
