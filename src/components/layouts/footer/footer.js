@@ -70,11 +70,7 @@ contacts.forEach((contact) => {
 const socialLinksData = [
   { icon: telegramSvg, href: 'https://web.telegram.org/', label: 'Telegram' },
   { icon: facebookSvg, href: 'https://www.facebook.com/', label: 'Facebook' },
-  {
-    icon: instagramSvg,
-    href: 'https://www.instagram.com/',
-    label: 'Instagram',
-  },
+  { icon: instagramSvg, href: 'https://www.instagram.com/', label: 'Instagram' },
   { icon: twitterSvg, href: 'https://twitter.com/', label: 'Twitter' },
 ];
 
