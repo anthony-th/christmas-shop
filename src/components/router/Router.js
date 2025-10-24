@@ -12,10 +12,10 @@ import { heroButton } from '@sections/hero';
 import { logoContainer } from '@lay/header';
 import { ctaBtn } from '@sections/cta';
 import footer from '@lay/footer';
-import { scrollBrowserToTop } from '@helpers/BrowserScroll';
+import scrollBrowserToTop from '@helpers/browser-scroll';
 import { createButtonUp as btnUp, checkTop } from '@common/button-up';
 import { resetSlider } from '@sections/slider';
-import { BASE_PATH } from '@helpers/Constants';
+import BASE_PATH from '@helpers/constants';
 
 const views = {
   404: notFound,

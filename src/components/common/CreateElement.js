@@ -12,4 +12,4 @@ const createElement = (tag, classes = [], textContent = '', attributes = {}, isH
   return element;
 }
 
-export { createElement };
+export default createElement;

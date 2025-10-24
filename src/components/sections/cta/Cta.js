@@ -1,5 +1,5 @@
 import './cta.scss';
-import { createElement } from '@common/createElement';
+import createElement from '@common/createElement';
 import createTimer from './timer';
 
 const ctaSection = createElement('section', ['section', 'cta']);

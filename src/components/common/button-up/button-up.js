@@ -1,7 +1,8 @@
 import './button-up.scss';
 import '@scss/_modifiers.scss';
-import { createElement } from '@common/createElement';
-import { scrollBrowserToTop } from '@helpers/BrowserScroll';
+import createElement from '@common/createElement';
+import scrollBrowserToTop from '@helpers/browser-scroll';
+import BASE_PATH from '@helpers/constants';
 
 let btnAdd = false;
 const buttonUp = createElement('button', ['button-up', 'cursor-pointer', 'display-none'], '', { 'aria-label': 'Scroll page to top' });
@@ -13,7 +14,7 @@ const svg = createElement('svg', ['icon-up'], `<svg xmlns="http://www.w3.org/200
 buttonUp.append(svg);
 buttonUp.onclick = () => {
   scrollBrowserToTop();
-  history.pushState(null, '', '/christmas-shop/gifts');
+  history.pushState(null, null, BASE_PATH + 'gifts');
 }
 
 const createButtonUp = () => {

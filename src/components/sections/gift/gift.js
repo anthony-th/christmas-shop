@@ -1,5 +1,5 @@
 import './gift.scss';
-import { createElement } from '@common/createElement';
+import createElement from '@common/createElement';
 import createCard from '@common/create-card';
 import dataJson from '@data/gifts.json';
 

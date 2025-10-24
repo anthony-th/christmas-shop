@@ -1,5 +1,5 @@
 import './create-card.scss';
-import { createElement } from '@common/createElement';
+import createElement from '@common/createElement';
 import createModal from '@common/create-modal';
 import giftHarmony from '@img/gift-for-harmony.avif';
 import giftHealth from '@img/gift-for-health.avif';

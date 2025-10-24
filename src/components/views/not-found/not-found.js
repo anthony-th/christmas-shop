@@ -1,7 +1,7 @@
 import '@scss/_typography.scss';
 import '@scss/_global.scss';
 import './not-found.scss';
-import { createElement } from '@common/createElement';
+import createElement from '@common/createElement';
 import main from '@lay/main';
 import changeViewsUrl from '@route';
 

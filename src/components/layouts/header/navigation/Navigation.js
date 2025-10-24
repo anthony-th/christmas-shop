@@ -1,8 +1,8 @@
-import { createElement } from '@common/createElement';
-import { changeViewsUrl } from '@route/router';
-import { scrollBrowserToTop } from '@helpers/BrowserScroll';
+import createElement from '@common/createElement';
+import changeViewsUrl from '@route/router';
+import scrollBrowserToTop from '@helpers/browser-scroll';
 import { toggleMenu, nav } from '@lay/header';
-import { BASE_PATH } from '@helpers/Constants';
+import BASE_PATH from '@helpers/constants';
 
 const linksData = [
   { textContent: 'gifts', url: 'gifts' },

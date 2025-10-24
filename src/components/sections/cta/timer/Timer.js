@@ -1,4 +1,4 @@
-import { createElement } from '@common/createElement';
+import createElement from '@common/createElement';
 
 const createTimer = () => {
   const timer = createElement('div', ['timer']);

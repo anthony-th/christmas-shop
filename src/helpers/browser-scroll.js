@@ -1,4 +1,4 @@
-import { header } from "@lay/header/Header";
+import { header } from "@lay/header";
 
 const isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
 
@@ -18,4 +18,4 @@ const scrollBrowserToTop = (isHomePage, buttonName) => {
   }
 }
 
-export { scrollBrowserToTop };
+export default scrollBrowserToTop;
