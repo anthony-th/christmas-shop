@@ -1,12 +1,12 @@
 import './footer.scss';
 import createElement from '@helpers/create-element';
 import createSvg from '@helpers/create-svg';
-import phoneIcon from '@icons/santa-claus.svg';
 import locationIcon from '@icons/christmas-tree.svg';
-import emailIcon from '@icons/snake.svg';
-import telegramSvg from '@icons/telegram.svg?raw';
 import facebookSvg from '@icons/fb.svg?raw';
 import instagramSvg from '@icons/ig.svg?raw';
+import phoneIcon from '@icons/santa-claus.svg';
+import emailIcon from '@icons/snake.svg';
+import telegramSvg from '@icons/telegram.svg?raw';
 import twitterSvg from '@icons/tw.svg?raw';
 
 const footer = createElement('footer', ['footer'], '', { id: 'contacts' });

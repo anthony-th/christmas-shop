@@ -1,7 +1,7 @@
 import './gift.scss';
-import createElement from '@helpers/create-element';
 import createCard from '@common/cards';
 import dataJson from '@data/gifts.json';
+import createElement from '@helpers/create-element';
 
 const giftSection = createElement('section', ['section', 'gift-section']);
 const giftContainer = createElement('div', ['gift-container']);

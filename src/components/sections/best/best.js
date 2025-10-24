@@ -1,7 +1,7 @@
 import './best.scss';
-import createElement from '@helpers/create-element';
 import createCard from '@common/cards';
 import dataJson from '@data/gifts.json';
+import createElement from '@helpers/create-element';
 
 const bestSection = createElement('section', ['section', 'best'], '', { id: 'best' });
 const bestContainer = createElement('div', ['best__container']);

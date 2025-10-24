@@ -1,8 +1,8 @@
 import './header.scss';
 import createElement from '@helpers/create-element';
 import createSvg from '@helpers/create-svg';
-import { createNav } from '@lay/header/navigation';
 import logoSvg from '@icons/logo.svg?raw';
+import { createNav } from '@lay/header/navigation';
 
 const header = createElement('header', ['header']);
 const logoContainer = createElement('a', ['header__logo-container'], '', { href: './' });

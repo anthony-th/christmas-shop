@@ -1,9 +1,9 @@
 import './button-up.scss';
 import '@scss/_modifiers.scss';
-import createElement from '@helpers/create-element';
-import createSvg from '@helpers/create-svg';
 import scrollBrowserToTop from '@helpers/browser-scroll';
 import BASE_PATH from '@helpers/constants';
+import createElement from '@helpers/create-element';
+import createSvg from '@helpers/create-svg';
 import arrowUpSvg from '@icons/arrow-up.svg?raw';
 
 let btnAdd = false;

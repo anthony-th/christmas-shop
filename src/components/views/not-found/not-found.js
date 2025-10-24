@@ -1,5 +1,6 @@
 import '@scss/_typography.scss';
 import '@scss/_global.scss';
+
 import './not-found.scss';
 import createElement from '@helpers/create-element';
 import main from '@lay/main';

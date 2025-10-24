@@ -2,20 +2,20 @@ import '@scss/_typography.scss';
 import '@scss/_global.scss';
 import '@scss/_media_hover.scss';
 import '@scss/_modifiers.scss';
+import { createButtonUp as btnUp, checkTop } from '@common/button-up';
+import scrollBrowserToTop from '@helpers/browser-scroll';
+import BASE_PATH from '@helpers/constants';
+import footer from '@lay/footer';
 import { header, nav, toggleMenu, burgerMenuResize } from '@lay/header';
+import { logoContainer } from '@lay/header';
 import { setActiveLink } from '@lay/header/navigation';
 import main from '@lay/main';
-import homePage from '@views/home';
-import giftsPage from '@views/gifts';
-import notFound from '@views/not-found';
-import { heroButton } from '@sections/hero';
-import { logoContainer } from '@lay/header';
 import { ctaBtn } from '@sections/cta';
-import footer from '@lay/footer';
-import scrollBrowserToTop from '@helpers/browser-scroll';
-import { createButtonUp as btnUp, checkTop } from '@common/button-up';
+import { heroButton } from '@sections/hero';
 import { resetSlider } from '@sections/slider';
-import BASE_PATH from '@helpers/constants';
+import giftsPage from '@views/gifts';
+import homePage from '@views/home';
+import notFound from '@views/not-found';
 
 const views = {
   404: notFound,

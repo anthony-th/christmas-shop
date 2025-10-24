@@ -1,8 +1,8 @@
 import './modal.scss';
 import createElement from '@helpers/create-element';
 import createSvg from '@helpers/create-svg';
-import starSvg from '@icons/star.svg?raw';
 import closeSvg from '@icons/close.svg?raw';
+import starSvg from '@icons/star.svg?raw';
 
 const createStars = (count) => {
   return Array.from({ length: 5 }, (_, index) => {

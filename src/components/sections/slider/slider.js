@@ -3,10 +3,10 @@ import createElement from '@helpers/create-element';
 import createSvg from '@helpers/create-svg';
 import arrowLeftSvg from '@icons/arrow-left.svg?raw';
 import arrowRightSvg from '@icons/arrow-right.svg?raw';
-import snowman from '@img/snowman.avif';
-import christmasTrees from '@img/christmas-trees.avif';
 import christmasTreeBall from '@img/christmas-tree-ball.avif';
+import christmasTrees from '@img/christmas-trees.avif';
 import fairytaleHouse from '@img/fairytale-house.avif';
+import snowman from '@img/snowman.avif';
 
 const sliderSection = createElement('section', ['section', 'slider']);
 const sliderContainer = createElement('div', ['slider__container']);
