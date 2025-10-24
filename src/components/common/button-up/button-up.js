@@ -1,16 +1,14 @@
 import './button-up.scss';
 import '@scss/_modifiers.scss';
 import createElement from '@helpers/create-element';
+import createSvg from '@helpers/create-svg';
 import scrollBrowserToTop from '@helpers/browser-scroll';
 import BASE_PATH from '@helpers/constants';
+import arrowUpSvg from '@icons/arrow-up.svg?raw';
 
 let btnAdd = false;
 const buttonUp = createElement('button', ['button-up', 'cursor-pointer', 'display-none'], '', { 'aria-label': 'Scroll page to top' });
-const svg = createElement('svg', ['icon-up'], `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-  <path d="M12 5V19" stroke="#FF4646" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M18 11L12 5" stroke="#FF4646" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M6 11L12 5" stroke="#FF4646" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>`, {}, true);
+const svg = createSvg(arrowUpSvg, ['icon-up'], { 'aria-hidden': 'true', 'focusable': 'false' });
 buttonUp.append(svg);
 buttonUp.onclick = () => {
   scrollBrowserToTop();

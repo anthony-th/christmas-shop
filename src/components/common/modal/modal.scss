@@ -86,10 +86,8 @@
             gap: 0.5rem;
             min-width: 7rem;
             .star-active {
-              svg {
-                path {
-                  fill-opacity: 1;
-                }
+              path {
+                fill-opacity: 1;
               }
             }
           }

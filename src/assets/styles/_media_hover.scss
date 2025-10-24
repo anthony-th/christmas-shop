@@ -68,10 +68,8 @@
             &:not([disabled]) {
               background-color: $white;
               .slider__icon {
-                svg {
-                  path {
-                    stroke: $primary;
-                  }
+                path {
+                  stroke: $primary;
                 }
               }
             }
