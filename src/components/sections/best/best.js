@@ -12,11 +12,11 @@ const cardsContainer = createElement('ul', ['cards-container']);
 
 const getRandomCards = (array, quantity) => {
   return Array.from({ length: quantity }, () => array[Math.floor(Math.random() * array.length)]);
-}
+};
 
 const randomCard = getRandomCards(dataJson, 4);
 
-cardsContainer.append(...randomCard.map(item => createCard(item)));
+cardsContainer.append(...randomCard.map((item) => createCard(item)));
 bestTextContainer.append(bestCaption, bestTitle);
 bestContainer.append(bestTextContainer, cardsContainer);
 bestSection.append(bestContainer);

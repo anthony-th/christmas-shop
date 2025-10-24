@@ -6,8 +6,8 @@ import bestSection from '@sections/best';
 import { ctaSection } from '@sections/cta';
 
 const homePage = () => {
-  document.title = "Christmas-shop";
+  document.title = 'Christmas-shop';
   main.prepend(heroSection, aboutSection, sliderSection, bestSection, ctaSection);
-}
+};
 
 export default homePage;

@@ -58,10 +58,10 @@ const linksConfig = () => {
         event.preventDefault();
         const isHomePage = window.location.pathname === BASE_PATH;
         const buttonName = button === ctaBtn ? 'ctaBtn' : 'heroButton';
-        scrollBrowserToTop(isHomePage, buttonName); 
+        scrollBrowserToTop(isHomePage, buttonName);
         changeViewsUrl('gifts');
       };
-    };
+    }
   });
   if (logoContainer) {
     logoContainer.onclick = (event) => {
@@ -82,9 +82,13 @@ window.onresize = () => {
   resetSlider();
 };
 window.onscroll = checkTop;
-window.addEventListener('DOMContentLoaded', () => {
-  showViews();
-  linksConfig();
-}, { once: true });
+window.addEventListener(
+  'DOMContentLoaded',
+  () => {
+    showViews();
+    linksConfig();
+  },
+  { once: true }
+);
 
 export default changeViewsUrl;

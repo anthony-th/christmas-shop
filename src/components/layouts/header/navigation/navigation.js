@@ -12,7 +12,12 @@ const linksData = [
 ];
 
 const navLinks = linksData.map((link) => {
-  const linkElement = createElement('a', ['header__nav-link', 'user-select-none'], link.textContent, { href: BASE_PATH + link.url });
+  const linkElement = createElement(
+    'a',
+    ['header__nav-link', 'user-select-none'],
+    link.textContent,
+    { href: BASE_PATH + link.url }
+  );
   linkElement.onclick = (event) => clickLink(event, link);
   return linkElement;
 });
@@ -41,8 +46,8 @@ const clickLink = (event, link) => {
       break;
     case 'contacts':
       if (isGiftsPage) {
-        anchorMove(targetUrl); 
-        history.pushState(null, null, BASE_PATH + 'gifts#contacts');            
+        anchorMove(targetUrl);
+        history.pushState(null, null, BASE_PATH + 'gifts#contacts');
       } else if (isHomePage) {
         anchorMove(targetUrl);
       }
@@ -81,7 +86,9 @@ const createNav = () => {
 const setActiveLink = (currentUrl) => {
   navLinks.forEach((link) => {
     const linkUrl = link.getAttribute('href');
-    const urlActive = linkUrl === currentUrl || (currentUrl.startsWith(BASE_PATH + 'gifts') && linkUrl === BASE_PATH + 'gifts');
+    const urlActive =
+      linkUrl === currentUrl ||
+      (currentUrl.startsWith(BASE_PATH + 'gifts') && linkUrl === BASE_PATH + 'gifts');
     link.classList.toggle('link-active', urlActive);
   });
 };

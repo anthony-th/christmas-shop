@@ -21,12 +21,12 @@ const createButtons = (iconSvg, classes, iconClasses, isDisabled = false, option
   const buttonOptions = { ...options };
   if (isDisabled) buttonOptions.disabled = '';
   const button = createElement('button', classes, '', buttonOptions);
-  const icon = createSvg(iconSvg, iconClasses, { 'aria-hidden': 'true', 'focusable': 'false' });
+  const icon = createSvg(iconSvg, iconClasses, { 'aria-hidden': 'true', focusable: 'false' });
   button.append(icon);
   return button;
 };
 
-const leftBtn = createButtons (
+const leftBtn = createButtons(
   arrowLeftSvg,
   ['slider__button', 'cursor-pointer'],
   ['slider__icon'],
@@ -34,12 +34,12 @@ const leftBtn = createButtons (
   { 'aria-label': 'Prev slide' }
 );
 
-const rightBtn = createButtons (
+const rightBtn = createButtons(
   arrowRightSvg,
   ['slider__button', 'cursor-pointer'],
   ['slider__icon'],
-   false,
-   { 'aria-label': 'Next slide' }
+  false,
+  { 'aria-label': 'Next slide' }
 );
 
 const texts = ['Live', 'create', 'Love', 'dream'];
@@ -48,8 +48,11 @@ let currentSlide = 0;
 
 const createItems = (texts, imageSrc) => {
   texts.forEach((text, index) => {
-    const sliderElement =  createElement('figure', ['slider-item']);
-    const sliderImg = createElement('img', ['slider__image'], '', { src: imageSrc[index], alt: 'slider image' });
+    const sliderElement = createElement('figure', ['slider-item']);
+    const sliderImg = createElement('img', ['slider__image'], '', {
+      src: imageSrc[index],
+      alt: 'slider image',
+    });
     const sliderText = createElement('figcaption', ['slider__text'], text);
     sliderElement.append(sliderImg, sliderText);
     sliderTrack.append(sliderElement);
@@ -69,8 +72,11 @@ const updateState = () => {
 const slideDirection = (direction) => {
   const isMobile = window.innerWidth < 769;
   const maxMoves = isMobile ? 6 : 3;
-  if ((direction === 'left' && currentSlide > 0) || (direction === 'right' && currentSlide < maxMoves)) {
-    currentSlide += (direction === 'left' ? -1 : 1);
+  if (
+    (direction === 'left' && currentSlide > 0) ||
+    (direction === 'right' && currentSlide < maxMoves)
+  ) {
+    currentSlide += direction === 'left' ? -1 : 1;
   }
   updateState();
 };

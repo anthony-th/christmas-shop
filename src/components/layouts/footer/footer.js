@@ -20,8 +20,17 @@ const createContactCard = (icon, href, text, description, target = '', rel = '')
   const options = { href };
   if (target) options.target = target;
   if (rel) options.rel = rel;
-  const card = createElement('a', ['contact-card', 'cursor-pointer', 'user-select-none'], '', options);
-  const iconElement = createElement('img', ['contact-card__icon'], '', { src: icon, alt: '', 'aria-hidden': 'true' });
+  const card = createElement(
+    'a',
+    ['contact-card', 'cursor-pointer', 'user-select-none'],
+    '',
+    options
+  );
+  const iconElement = createElement('img', ['contact-card__icon'], '', {
+    src: icon,
+    alt: '',
+    'aria-hidden': 'true',
+  });
   const textElement = createElement('p', ['contact-card__link'], text);
   const descriptionText = createElement('p', ['contact-card__text'], description);
   card.append(iconElement, textElement, descriptionText);
@@ -30,9 +39,26 @@ const createContactCard = (icon, href, text, description, target = '', rel = '')
 };
 
 const contacts = [
-  { icon: phoneIcon, href: 'tel:+375291112233', text: '+375 (29) 111-22-33', description: 'Call Us' },
-  { icon: locationIcon, href: 'https://maps.app.goo.gl/emac7cSMKEP3SRuP8', text: 'Magic forest', description: 'Meet Us', target: '_blank', rel: 'noreferrer noopener' },
-  { icon: emailIcon, href: 'mailto:gifts@magic.com', text: 'gifts@magic.com', description: 'Write Us' },
+  {
+    icon: phoneIcon,
+    href: 'tel:+375291112233',
+    text: '+375 (29) 111-22-33',
+    description: 'Call Us',
+  },
+  {
+    icon: locationIcon,
+    href: 'https://maps.app.goo.gl/emac7cSMKEP3SRuP8',
+    text: 'Magic forest',
+    description: 'Meet Us',
+    target: '_blank',
+    rel: 'noreferrer noopener',
+  },
+  {
+    icon: emailIcon,
+    href: 'mailto:gifts@magic.com',
+    text: 'gifts@magic.com',
+    description: 'Write Us',
+  },
 ];
 
 contacts.forEach((contact) => {
@@ -44,21 +70,41 @@ contacts.forEach((contact) => {
 const socialLinksData = [
   { icon: telegramSvg, href: 'https://web.telegram.org/', label: 'Telegram' },
   { icon: facebookSvg, href: 'https://www.facebook.com/', label: 'Facebook' },
-  { icon: instagramSvg, href: 'https://www.instagram.com/', label: 'Instagram' },
-  { icon: twitterSvg, href: 'https://twitter.com/', label: 'Twitter' }
+  {
+    icon: instagramSvg,
+    href: 'https://www.instagram.com/',
+    label: 'Instagram',
+  },
+  { icon: twitterSvg, href: 'https://twitter.com/', label: 'Twitter' },
 ];
 
 socialLinksData.forEach(({ icon, href, label }) => {
   const linkItem = createElement('li', ['social-link-item']);
-  const link = createElement('a', ['social-link'], '',  { href, target: '_blank', rel: 'noreferrer noopener', 'aria-label': label});
-  const socialIcon = createSvg(icon, ['social-icon'], { 'aria-hidden': 'true', 'focusable': 'false' });
+  const link = createElement('a', ['social-link'], '', {
+    href,
+    target: '_blank',
+    rel: 'noreferrer noopener',
+    'aria-label': label,
+  });
+  const socialIcon = createSvg(icon, ['social-icon'], {
+    'aria-hidden': 'true',
+    focusable: 'false',
+  });
   link.append(socialIcon);
   linkItem.append(link);
   socials.append(linkItem);
 });
 
-const footerParagraph = createElement('p', ['footer__paragraph'], '© Copyright 2025, All Rights Reserved');
-const footerCaption = createElement('a', ['footer__caption'], 'Made in Rolling Scopes School', { href: 'https://rs.school/', target: '_blank', rel: 'noreferrer noopener' });
+const footerParagraph = createElement(
+  'p',
+  ['footer__paragraph'],
+  '© Copyright 2025, All Rights Reserved'
+);
+const footerCaption = createElement('a', ['footer__caption'], 'Made in Rolling Scopes School', {
+  href: 'https://rs.school/',
+  target: '_blank',
+  rel: 'noreferrer noopener',
+});
 
 socialsContainer.append(socials, footerParagraph, footerCaption);
 footerContainer.append(contactsContainer, socialsContainer);

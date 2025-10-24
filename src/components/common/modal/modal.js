@@ -11,7 +11,10 @@ const createStars = (count) => {
     if (isActive) {
       classes.push('star-active');
     }
-    return createSvg(starSvg, classes, { 'aria-hidden': 'true', 'focusable': 'false' });
+    return createSvg(starSvg, classes, {
+      'aria-hidden': 'true',
+      focusable: 'false',
+    });
   });
 };
 
@@ -29,13 +32,13 @@ const toggleActiveClass = (modal, shadow) => {
   modal.classList.toggle('modal-active');
   shadow.classList.toggle('modal-active');
   document.body.classList.toggle('overflow-hidden');
-}
+};
 
 const closeModal = (modal, shadow) => {
   toggleActiveClass(modal, shadow);
   modal.remove();
   shadow.remove();
-}
+};
 
 const createModal = (item, image) => {
   const shadow = createElement('div', ['shadow']);
@@ -62,8 +65,13 @@ const createModal = (item, image) => {
     createSuperpower('Dream', item.superpowers.dream, Math.round(item.superpowers.dream / 100))
   );
 
-  const cancelBtn = createElement('button', ['modal__cancel', 'cursor-pointer'], '', { 'aria-label': 'Close modal' });
-  const closeIcon = createSvg(closeSvg, ['modal__cancel-icon'], { 'aria-hidden': 'true', 'focusable': 'false' });
+  const cancelBtn = createElement('button', ['modal__cancel', 'cursor-pointer'], '', {
+    'aria-label': 'Close modal',
+  });
+  const closeIcon = createSvg(closeSvg, ['modal__cancel-icon'], {
+    'aria-hidden': 'true',
+    focusable: 'false',
+  });
   cancelBtn.append(closeIcon);
 
   imageContainer.append(cardImage);
@@ -76,6 +84,6 @@ const createModal = (item, image) => {
   requestAnimationFrame(() => toggleActiveClass(modal, shadow));
   cancelBtn.onclick = () => closeModal(modal, shadow);
   shadow.onclick = () => closeModal(modal, shadow);
-}
+};
 
 export default createModal;

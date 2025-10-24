@@ -5,15 +5,20 @@ import { createNav } from '@lay/header/navigation';
 import logoSvg from '@icons/logo.svg?raw';
 
 const header = createElement('header', ['header']);
-const logoContainer = createElement('a', ['header__logo-container'], '', { href: './'});
-const logoIcon = createSvg(logoSvg, ['header__logo-icon'], { 'aria-hidden': 'true', 'focusable': 'false' });
+const logoContainer = createElement('a', ['header__logo-container'], '', { href: './' });
+const logoIcon = createSvg(logoSvg, ['header__logo-icon'], {
+  'aria-hidden': 'true',
+  focusable: 'false',
+});
 const logoTitle = createElement('h3', ['header__logo-title', 'user-select-none'], 'the gifts');
 const nav = createElement('nav', ['header__nav']);
-const burgerMenu = createElement('button', ['burger-menu', 'cursor-pointer'], '', { 'aria-label': 'Open menu' });
+const burgerMenu = createElement('button', ['burger-menu', 'cursor-pointer'], '', {
+  'aria-label': 'Open menu',
+});
 
 const createNavList = () => {
   const navList = createElement('ul', ['header__nav-list']);
-  createNav().forEach(listItem => {
+  createNav().forEach((listItem) => {
     navList.append(listItem);
   });
   return navList;

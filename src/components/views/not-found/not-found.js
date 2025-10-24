@@ -6,7 +6,7 @@ import main from '@lay/main';
 import changeViewsUrl from '@route';
 
 const notFound = () => {
-  document.title = "404";
+  document.title = '404';
   main.innerHTML = '';
   const title = createElement('h2', ['page-404__title'], '404');
   const subTitle = createElement('h3', ['page-404__subtitle'], 'Page not found');
@@ -24,6 +24,5 @@ const notFound = () => {
   main.append(notFoundSection);
   document.body.append(main);
 };
-
 
 export default notFound;

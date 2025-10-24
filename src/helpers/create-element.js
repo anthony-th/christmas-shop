@@ -8,10 +8,10 @@ const createElement = (tag, classes = [], textContent = '', attributes = {}) => 
   }
 
   for (const [key, value] of Object.entries(attributes)) {
-      element.setAttribute(key, value);
+    element.setAttribute(key, value);
   }
 
   return element;
-}
+};
 
 export default createElement;
