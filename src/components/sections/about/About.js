@@ -14,4 +14,4 @@ textBlock.append(aboutCaption, aboutTitle, aboutParagraph);
 textContainer.append(textBlock);
 aboutContainer.append(textContainer, imgContainer);
 aboutSection.append(aboutContainer);
-export { aboutSection };
+export default aboutSection;

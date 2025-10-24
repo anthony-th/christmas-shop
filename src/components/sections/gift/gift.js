@@ -1,4 +1,4 @@
-import './gift-section.scss';
+import './gift.scss';
 import { createElement } from '@common/CreateElement';
 import { createCard } from '@common/create-card/CreateCard';
 import dataJson from '@data/gifts.json';
@@ -49,4 +49,4 @@ cardCategory('all');
 titleContainer.append(giftTitle);
 giftContainer.append(titleContainer);
 giftSection.append(giftContainer, tabsContainer, cardsContainer);
-export { giftSection };
+export default giftSection;

@@ -21,4 +21,4 @@ bestTextContainer.append(bestCaption, bestTitle);
 bestContainer.append(bestTextContainer, cardsContainer);
 bestSection.append(bestContainer);
 
-export { bestSection };
+export default bestSection;

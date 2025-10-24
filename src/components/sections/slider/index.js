@@ -1,0 +1,1 @@
+export { sliderSection, resetSlider } from './slider';

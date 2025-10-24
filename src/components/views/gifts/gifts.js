@@ -1,5 +1,5 @@
 import main from '@lay/main';
-import { giftSection } from '@sections/gift/Gift-section';
+import giftSection from '@sections/gift';
 
 const giftsPage = () => {
   document.title = "Christmas-shop | Gifts";

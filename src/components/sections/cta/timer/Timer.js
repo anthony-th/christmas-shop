@@ -49,4 +49,4 @@ const createTimer = () => {
   return timer;
 };
 
-export { createTimer };
+export default createTimer;
