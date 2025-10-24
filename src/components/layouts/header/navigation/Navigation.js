@@ -1,4 +1,4 @@
-import createElement from '@common/createElement';
+import createElement from '@helpers/create-element';
 import changeViewsUrl from '@route/router';
 import scrollBrowserToTop from '@helpers/browser-scroll';
 import { toggleMenu, nav } from '@lay/header';

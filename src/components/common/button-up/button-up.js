@@ -1,6 +1,6 @@
 import './button-up.scss';
 import '@scss/_modifiers.scss';
-import createElement from '@common/createElement';
+import createElement from '@helpers/create-element';
 import scrollBrowserToTop from '@helpers/browser-scroll';
 import BASE_PATH from '@helpers/constants';
 

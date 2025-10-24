@@ -1,5 +1,5 @@
 import './footer.scss';
-import createElement from '@common/createElement';
+import createElement from '@helpers/create-element';
 import phoneIcon from '@icons/santa-claus.svg';
 import locationIcon from '@icons/christmas-tree.svg';
 import emailIcon from '@icons/snake.svg';
