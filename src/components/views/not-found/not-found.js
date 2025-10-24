@@ -1,9 +1,9 @@
 import '@scss/_typography.scss';
 import '@scss/_global.scss';
 import './not-found.scss';
-import { createElement } from '@common/CreateElement';
+import { createElement } from '@common/createElement';
 import main from '@lay/main';
-import { changeViewsUrl } from '@route/Router';
+import changeViewsUrl from '@route';
 
 const notFound = () => {
   document.title = "404";

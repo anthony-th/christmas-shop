@@ -1,6 +1,6 @@
 import './button-up.scss';
 import '@scss/_modifiers.scss';
-import { createElement } from '@common/CreateElement';
+import { createElement } from '@common/createElement';
 import { scrollBrowserToTop } from '@helpers/BrowserScroll';
 
 let btnAdd = false;

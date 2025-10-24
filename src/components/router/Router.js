@@ -3,18 +3,18 @@ import '@scss/_global.scss';
 import '@scss/_media_hover.scss';
 import '@scss/_modifiers.scss';
 import { header, nav, toggleMenu, burgerMenuResize } from '@lay/header';
-import { setActiveLink } from '@lay/header/navigation/Navigation';
+import { setActiveLink } from '@lay/header/navigation';
 import main from '@lay/main';
 import homePage from '@views/home';
 import giftsPage from '@views/gifts';
 import notFound from '@views/not-found';
-import { heroButton } from '@sections/hero/Hero';
-import { logoContainer } from '@lay/header/Header';
-import { ctaBtn } from '@sections/cta/Cta';
-import { footer } from '@lay/footer/Footer';
+import { heroButton } from '@sections/hero';
+import { logoContainer } from '@lay/header';
+import { ctaBtn } from '@sections/cta';
+import footer from '@lay/footer';
 import { scrollBrowserToTop } from '@helpers/BrowserScroll';
-import { createButtonUp as btnUp, checkTop } from '@common/button-up/ButtonUp';
-import { resetSlider } from '@sections/slider/Slider';
+import { createButtonUp as btnUp, checkTop } from '@common/button-up';
+import { resetSlider } from '@sections/slider';
 import { BASE_PATH } from '@helpers/Constants';
 
 const views = {
@@ -87,4 +87,4 @@ window.addEventListener('DOMContentLoaded', () => {
   linksConfig();
 }, { once: true });
 
-export { changeViewsUrl };
+export default changeViewsUrl;

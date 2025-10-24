@@ -1,5 +1,5 @@
 import './slider.scss';
-import { createElement } from '@common/CreateElement';
+import { createElement } from '@common/createElement';
 import snowman from '@img/snowman.avif';
 import christmasTrees from '@img/christmas-trees.avif';
 import christmasTreeBall from '@img/christmas-tree-ball.avif';

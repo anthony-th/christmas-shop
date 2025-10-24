@@ -1,6 +1,6 @@
 import './create-card.scss';
-import { createElement } from '@common/CreateElement';
-import { createAndOpenModal as OpenModal } from '@common/open-modal/OpenModal';
+import { createElement } from '@common/createElement';
+import createModal from '@common/create-modal';
 import giftHarmony from '@img/gift-for-harmony.avif';
 import giftHealth from '@img/gift-for-health.avif';
 import giftWork from '@img/gift-for-work.avif';
@@ -31,9 +31,9 @@ const createCard = (item, headingLevels = { subtitle: 'h3', title: 'h4' }) => {
   card.append(cardImageContainer, cardTextContainer, cardBtn);
   cardItem.append(card);
   
-  cardBtn.onclick = () => OpenModal(item, images[categoryImg]);
+  cardBtn.onclick = () => createModal(item, images[categoryImg]);
 
   return cardItem;
 };
 
-export { createCard };
+export default createCard;

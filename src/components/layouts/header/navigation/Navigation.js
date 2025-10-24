@@ -1,7 +1,7 @@
-import { createElement } from '@common/CreateElement';
+import { createElement } from '@common/createElement';
 import { changeViewsUrl } from '@route/router';
 import { scrollBrowserToTop } from '@helpers/BrowserScroll';
-import { toggleMenu, nav } from '@lay/header/Header';
+import { toggleMenu, nav } from '@lay/header';
 import { BASE_PATH } from '@helpers/Constants';
 
 const linksData = [

@@ -1,5 +1,5 @@
 import './footer.scss';
-import { createElement } from '@common/CreateElement';
+import { createElement } from '@common/createElement';
 import phoneIcon from '@icons/santa-claus.svg';
 import locationIcon from '@icons/christmas-tree.svg';
 import emailIcon from '@icons/snake.svg';
@@ -75,4 +75,4 @@ socialsContainer.append(socials, footerParagraph, footerCaption);
 footerContainer.append(contactsContainer, socialsContainer);
 footer.append(footerContainer);
 
-export { footer };
+export default footer;

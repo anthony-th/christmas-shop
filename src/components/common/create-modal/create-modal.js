@@ -1,5 +1,5 @@
-import './open-modal.scss';
-import { createElement } from '@common/CreateElement';
+import './create-modal.scss';
+import { createElement } from '@common/createElement';
 
 const svgStar = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
   <g clip-path="url(#clip0_32048_58)">
@@ -50,7 +50,7 @@ const closeModal = (modal, shadow) => {
   shadow.remove();
 }
 
-const createAndOpenModal = (item, image) => {
+const createModal = (item, image) => {
   const shadow = createElement('div', ['shadow']);
   const modal = createElement('div', ['modal']);
   const imageContainer = createElement('div', ['modal__image-container']);
@@ -90,4 +90,4 @@ const createAndOpenModal = (item, image) => {
   shadow.onclick = () => closeModal(modal, shadow);
 }
 
-export { createAndOpenModal };
+export default createModal;
