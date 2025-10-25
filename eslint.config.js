@@ -7,10 +7,7 @@ import perfectionist from 'eslint-plugin-perfectionist';
 const filesJs = ['src/**/*.js'];
 
 const languageOptions = {
-  globals: {
-    ...globals.browser,
-    ...globals.node,
-  },
+  globals: globals.browser,
   ecmaVersion: 'latest',
   sourceType: 'module',
 };
