@@ -7,9 +7,7 @@ const heroCaption = createElement('h3', ['hero__caption'], 'Merry Christmas');
 const heroTitle = createElement(
   'h1',
   ['hero__title'],
-  `Gift yourself the magic of new possibilities`,
-  {},
-  true
+  `Gift yourself the magic of new possibilities`
 );
 const heroButton = createElement(
   'a',
