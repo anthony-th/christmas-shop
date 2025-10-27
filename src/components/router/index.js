@@ -1,1 +1,1 @@
-export { default } from './router';
+export { router, changeViewsUrl } from './router';

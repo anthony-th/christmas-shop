@@ -4,7 +4,7 @@ import '@scss/_global.scss';
 import './not-found.scss';
 import createElement from '@helpers/create-element';
 import main from '@lay/main';
-import changeViewsUrl from '@route';
+import { changeViewsUrl } from '@route';
 
 const notFound = () => {
   document.title = '404';
@@ -23,7 +23,6 @@ const notFound = () => {
   notfoundContainer.append(title, subTitle, homeLink);
   notFoundSection.append(notfoundContainer);
   main.append(notFoundSection);
-  document.body.append(main);
 };
 
 export default notFound;

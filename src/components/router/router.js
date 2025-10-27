@@ -1,94 +1,36 @@
-import '@scss/_typography.scss';
-import '@scss/_global.scss';
-import '@scss/_media_hover.scss';
-import '@scss/_modifiers.scss';
-import { createButtonUp as btnUp, checkTop } from '@common/button-up';
-import scrollBrowserToTop from '@helpers/browser-scroll';
+import { createButtonUp as btnUp } from '@common/button-up';
 import BASE_PATH from '@helpers/constants';
 import footer from '@lay/footer';
-import { header, nav, toggleMenu, burgerMenuResize } from '@lay/header';
-import { logoContainer } from '@lay/header';
+import { header } from '@lay/header';
 import { setActiveLink } from '@lay/header/navigation';
 import main from '@lay/main';
-import { ctaBtn } from '@sections/cta';
-import { heroButton } from '@sections/hero';
-import { resetSlider } from '@sections/slider';
 import giftsPage from '@views/gifts';
 import homePage from '@views/home';
 import notFound from '@views/not-found';
 
-const views = {
+const routes = {
   404: notFound,
   [BASE_PATH]: homePage,
   [BASE_PATH + 'gifts']: giftsPage,
 };
 
-const checkHeaderVisible = (visibleHeader) => {
-  if (visibleHeader && !document.body.contains(header)) {
-    document.body.prepend(footer);
-    document.body.prepend(main);
-    document.body.prepend(header);
-  } else if (!visibleHeader && document.body.contains(header)) {
-    header.remove();
-    main.remove();
-    footer.remove();
-  }
-};
-
-const showViews = () => {
-  const currentPath = window.location.pathname;
-  const currentPage = views[currentPath] || views[404];
-  checkHeaderVisible(currentPath === BASE_PATH || currentPath === BASE_PATH + 'gifts');
-  main.innerHTML = '';
-  currentPage();
-  btnUp();
-  setActiveLink(currentPath);
+const router = {
+  showView() {
+    const currentPath = window.location.pathname;
+    const currentView = routes[currentPath] || routes[404];
+    const isErrorPage = currentView === notFound;
+    header.style.display = isErrorPage ? 'none' : '';
+    footer.style.display = isErrorPage ? 'none' : '';
+    main.innerHTML = '';
+    currentView();
+    btnUp();
+    setActiveLink(currentPath);
+  },
 };
 
 const changeViewsUrl = (url) => {
   history.pushState(null, null, BASE_PATH + url);
-  showViews();
+  router.showView();
 };
 
-const linksConfig = () => {
-  const giftsButtons = [heroButton, ctaBtn];
-  giftsButtons.forEach((button) => {
-    if (button) {
-      button.onclick = (event) => {
-        event.preventDefault();
-        const isHomePage = window.location.pathname === BASE_PATH;
-        const buttonName = button === ctaBtn ? 'ctaBtn' : 'heroButton';
-        scrollBrowserToTop(isHomePage, buttonName);
-        changeViewsUrl('gifts');
-      };
-    }
-  });
-  if (logoContainer) {
-    logoContainer.onclick = (event) => {
-      if (nav.classList.contains('menu-open')) {
-        toggleMenu();
-      }
-      event.preventDefault();
-      scrollBrowserToTop();
-      changeViewsUrl('');
-    };
-  }
-};
-
-window.onpopstate = showViews;
-window.onresize = () => {
-  burgerMenuResize();
-  btnUp();
-  resetSlider();
-};
-window.onscroll = checkTop;
-window.addEventListener(
-  'DOMContentLoaded',
-  () => {
-    showViews();
-    linksConfig();
-  },
-  { once: true }
-);
-
-export default changeViewsUrl;
+export { router, changeViewsUrl };

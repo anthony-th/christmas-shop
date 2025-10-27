@@ -2,7 +2,7 @@ import scrollBrowserToTop from '@helpers/browser-scroll';
 import BASE_PATH from '@helpers/constants';
 import createElement from '@helpers/create-element';
 import { toggleMenu, nav } from '@lay/header';
-import changeViewsUrl from '@route/router';
+import { changeViewsUrl } from '@route';
 
 const linksData = [
   { textContent: 'gifts', url: 'gifts' },
