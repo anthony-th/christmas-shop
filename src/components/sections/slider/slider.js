@@ -17,34 +17,33 @@ const sliderWrapper = createElement('div', ['slider__wrapper']);
 const sliderTrack = createElement('div', ['slider__track']);
 const sliderNavigation = createElement('div', ['slider__navigation']);
 
-const createButtons = (iconSvg, classes, iconClasses, isDisabled = false, options = {}) => {
-  const buttonOptions = { ...options };
-  if (isDisabled) buttonOptions.disabled = '';
-  const button = createElement('button', classes, '', buttonOptions);
-  const icon = createSvg(iconSvg, iconClasses, { 'aria-hidden': 'true', focusable: 'false' });
-  button.append(icon);
-  return button;
+const createButton = (iconSvg, ariaLabel, isDisabled = false) => {
+  const btn = createElement('button', ['slider__button', 'cursor-pointer'], '', {
+    'aria-label': ariaLabel,
+    disabled: isDisabled ? '' : null,
+  });
+  const icon = createSvg(iconSvg, ['slider__icon'], { 'aria-hidden': 'true', focusable: 'false' });
+  btn.append(icon);
+  return btn;
 };
 
-const leftBtn = createButtons(
-  arrowLeftSvg,
-  ['slider__button', 'cursor-pointer'],
-  ['slider__icon'],
-  true,
-  { 'aria-label': 'Prev slide' }
-);
-
-const rightBtn = createButtons(
-  arrowRightSvg,
-  ['slider__button', 'cursor-pointer'],
-  ['slider__icon'],
-  false,
-  { 'aria-label': 'Next slide' }
-);
+const leftBtn = createButton(arrowLeftSvg, 'Prev slide', true);
+const rightBtn = createButton(arrowRightSvg, 'Next slide');
 
 const texts = ['Live', 'create', 'Love', 'dream'];
 const imageSrc = [snowman, christmasTrees, christmasTreeBall, fairytaleHouse];
 let currentSlide = 0;
+
+const getSliderConfig = () => {
+  const isMobile = window.innerWidth < 769;
+  return { maxMoves: isMobile ? 6 : 3 };
+};
+
+const updateButtonsState = () => {
+  const { maxMoves } = getSliderConfig();
+  leftBtn.disabled = currentSlide === 0;
+  rightBtn.disabled = currentSlide === maxMoves;
+};
 
 const createItems = (texts, imageSrc) => {
   texts.forEach((text, index) => {
@@ -60,26 +59,22 @@ const createItems = (texts, imageSrc) => {
 };
 
 const updateState = () => {
-  const isMobile = window.innerWidth < 769;
-  const maxMoves = isMobile ? 6 : 3;
+  const { maxMoves } = getSliderConfig();
   const moveDistance = (sliderTrack.scrollWidth - sliderWrapper.offsetWidth) / maxMoves;
   const btnDistance = -(currentSlide * moveDistance);
   sliderTrack.style.transform = `translateX(${btnDistance}px)`;
-  leftBtn.disabled = currentSlide === 0;
-  rightBtn.disabled = currentSlide === maxMoves;
+  updateButtonsState();
 };
 
 const slideDirection = (direction) => {
-  const isMobile = window.innerWidth < 769;
-  const maxMoves = isMobile ? 6 : 3;
+  const { maxMoves } = getSliderConfig();
   if (
     (direction === 'left' && currentSlide > 0) ||
     (direction === 'right' && currentSlide < maxMoves)
   ) {
     currentSlide += direction === 'left' ? -1 : 1;
-
-    disableSliderButtons();
     updateState();
+    disableSliderButtons();
     enableSliderButtons();
   }
 };
@@ -91,14 +86,20 @@ const resetSlider = () => {
   }
 };
 
+const onTransitionEnd = () => {
+  updateButtonsState();
+  leftBtn.addEventListener('click', leftBtnClick);
+  rightBtn.addEventListener('click', rightBtnClick);
+  sliderTrack.removeEventListener('transitionend', onTransitionEnd);
+};
+
 const enableSliderButtons = () => {
-  sliderTrack.addEventListener('transitionend', () => {
-    leftBtn.addEventListener('click', leftBtnClick);
-    rightBtn.addEventListener('click', rightBtnClick);
-  });
+  sliderTrack.addEventListener('transitionend', onTransitionEnd);
 };
 
 const disableSliderButtons = () => {
+  leftBtn.disabled = true;
+  rightBtn.disabled = true;
   leftBtn.removeEventListener('click', leftBtnClick);
   rightBtn.removeEventListener('click', rightBtnClick);
 };
