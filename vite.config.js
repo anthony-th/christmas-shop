@@ -45,6 +45,7 @@ export default defineConfig(({ command }) => {
     },
     resolve: {
       alias: [
+        { find: '@app', replacement: resolve(root, 'app') },
         { find: '@scss', replacement: resolve(root, 'assets/styles') },
         { find: '@img', replacement: resolve(root, 'assets/images') },
         { find: '@icons', replacement: resolve(root, 'assets/icons') },
