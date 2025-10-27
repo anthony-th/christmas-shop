@@ -77,8 +77,11 @@ const slideDirection = (direction) => {
     (direction === 'right' && currentSlide < maxMoves)
   ) {
     currentSlide += direction === 'left' ? -1 : 1;
+
+    disableSliderButtons();
+    updateState();
+    enableSliderButtons();
   }
-  updateState();
 };
 
 const resetSlider = () => {
@@ -88,8 +91,24 @@ const resetSlider = () => {
   }
 };
 
-rightBtn.onclick = () => slideDirection('right');
-leftBtn.onclick = () => slideDirection('left');
+const enableSliderButtons = () => {
+  sliderTrack.addEventListener('transitionend', () => {
+    leftBtn.addEventListener('click', leftBtnClick);
+    rightBtn.addEventListener('click', rightBtnClick);
+  });
+};
+
+const disableSliderButtons = () => {
+  leftBtn.removeEventListener('click', leftBtnClick);
+  rightBtn.removeEventListener('click', rightBtnClick);
+};
+
+const rightBtnClick = () => slideDirection('right');
+const leftBtnClick = () => slideDirection('left');
+
+rightBtn.addEventListener('click', rightBtnClick);
+leftBtn.addEventListener('click', leftBtnClick);
+
 createItems(texts, imageSrc);
 updateState();
 
