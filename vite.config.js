@@ -15,7 +15,10 @@ export default defineConfig(({ command }) => {
       checker({
         eslint: {
           useFlatConfig: true,
-          lintCommand: `eslint "${resolve(__dirname, 'src')}/**/*.{js,mjs,cjs}"`,
+          lintCommand: `eslint "**/*.js"`,
+        },
+        stylelint: {
+          lintCommand: 'stylelint "**/*.scss"',
         },
       }),
     ],
