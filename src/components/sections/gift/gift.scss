@@ -2,35 +2,46 @@
 @use '../../../assets/styles/mixins' as *;
 
 .gift-section {
-  width: 100%;
   @include flex(center, normal, column);
+
+  width: 100%;
   gap: 1.25rem;
   border-radius: 1.25rem;
   background: $bg-garland center top / contain no-repeat, $primary;
+
   .gift-container {
     @include flex(center, normal, column);
+
     max-width: 79.75rem;
     gap: 1.25rem;
+
     .title-container {
       display: flex;
       max-width: 26.625rem;
+
       .gift-title {
+        @include text-header(150%, 0.36rem, 2rem);
+
         color: $white;
         text-align: center;
-        @include text-header(150%, 0.36rem, 2rem);
       }
     }
   }
+
   .tabs-container {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    @media screen and (max-width: 550px) {
-      gap: 0rem;
+
+    @media screen and (width <= 550px) {
+      gap: 0;
     }
+
     .tabs-item {
       .tabs-btn {
         @include flex-center;
+        @include text-header;
+
         padding: 0.75rem 1.25rem;
         border-radius: 0.75rem;
         background: transparent;
@@ -38,10 +49,11 @@
         color: $white;
         white-space: nowrap;
         position: relative;
-        @include text-header;
-        @media screen and (max-width: 480px) {
+
+        @media screen and (width <= 480px) {
           padding: 0.75rem 0.5rem;
         }
+
         &::before {
           content: '';
           position: absolute;
@@ -54,6 +66,7 @@
           border-radius: 0.75rem;
         }
       }
+
       .active-tab {
         &::before {
           content: '';

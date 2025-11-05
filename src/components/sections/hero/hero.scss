@@ -2,34 +2,43 @@
 @use '../../../assets/styles/mixins' as *;
 
 .hero {
-  width: 100%;
   @include flex(center, normal, column);
-  border-radius: 1.25rem 1.25rem 0rem 0rem;
+
+  width: 100%;
+  border-radius: 1.25rem 1.25rem 0 0;
   background: $bg-ball 50% / cover no-repeat, $bg-snow 50% / cover no-repeat, $primary;
+
   .hero__container {
-    margin: 0 auto;
     @include flex(center, center, column);
+
+    margin: 0 auto;
     max-width: 26.8125rem;
-    padding: 3.75rem 0rem;
+    padding: 3.75rem 0;
     gap: 0.75rem;
+
     .hero__caption,
     .hero__subcaption {
-      color: $white;
-      text-align: center;
       @include text-caption;
-    }
-    .hero__title {
+
       color: $white;
       text-align: center;
-      @include text-header(150%, 0.36rem, 2rem);
     }
+
+    .hero__title {
+      @include text-header(150%, 0.36rem, 2rem);
+
+      color: $white;
+      text-align: center;
+    }
+
     .hero__button {
+      @include flex-center;
+      @include text-header;
+
       border-radius: 1.25rem;
       background: $dark;
-      @include flex-center;
       padding: 1.25rem 2rem;
       color: $white;
-      @include text-header;
     }
   }
 }

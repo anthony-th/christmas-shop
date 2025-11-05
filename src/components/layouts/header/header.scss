@@ -3,31 +3,41 @@
 
 .header {
   @include flex(center, space-between);
+
   max-width: 79.75rem;
   margin: 0 auto;
-  padding: 0.75rem 0rem;
+  padding: 0.75rem 0;
   gap: 0.75rem;
-  @media screen and (max-width: 768px) {
+
+  @media screen and (width <= 768px) {
     padding: 0.75rem 0.5rem;
   }
+
   .header__logo-container {
     @include flex-center;
+
     gap: 0.5rem;
     padding: 0.5rem 1.25rem;
-    @media screen and (max-width: 768px) {
+
+    @media screen and (width <= 768px) {
       z-index: 20;
     }
+
     .header__logo-icon {
       @include flex-center;
     }
+
     .header__logo-title {
-      color: $dark;
       @include text-header;
+
+      color: $dark;
     }
   }
+
   .header__nav {
-    @media screen and (max-width: 768px) {
+    @media screen and (width <= 768px) {
       @include flex-center;
+
       position: fixed;
       top: 0;
       right: -100%;
@@ -36,24 +46,31 @@
       background: $white;
       z-index: 10;
     }
+
     .header__nav-list {
       display: flex;
       gap: 0.5rem;
-      @media screen and (max-width: 768px) {
+
+      @media screen and (width <= 768px) {
         flex-direction: column;
         padding: 64px 0 0;
       }
+
       .header__nav-item {
         @include flex-center;
+
         .header__nav-link {
+          @include text-header;
+
           color: $dark;
           padding: 0.75rem 1.25rem;
           border-radius: 0.75rem;
-          @include text-header;
-          @media screen and (max-width: 768px) {
+
+          @media screen and (width <= 768px) {
             @include text-header(152%, 0.24rem, 1.5rem);
           }
         }
+
         .link-active {
           background: $primary-10;
           color: $primary;
@@ -62,11 +79,14 @@
       }
     }
   }
+
   .menu-open {
     right: 0;
   }
+
   .burger-menu {
     @include flex(center, center, column);
+
     display: none;
     width: 2.5rem;
     height: 2.5rem;
@@ -74,10 +94,12 @@
     background: transparent;
     border: none;
     position: relative;
-    @media screen and (max-width: 768px) {
+
+    @media screen and (width <= 768px) {
       display: flex;
       z-index: 20;
     }
+
     &::before,
     &::after {
       content: '';
@@ -89,15 +111,18 @@
       background: $dark;
       transition: transform 0.7s ease, top 0.7s ease;
     }
+
     &::after {
       top: 1.5rem;
     }
   }
+
   .burger-menu-active {
     &::before {
       transform: rotate(45deg);
       top: 1.25rem;
     }
+
     &::after {
       transform: rotate(-45deg);
       top: 1.25rem;

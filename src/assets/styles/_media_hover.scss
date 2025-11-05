@@ -15,6 +15,7 @@
       }
     }
   }
+
   .page-404 {
     .page-404__container {
       .page-404__link {
@@ -25,6 +26,7 @@
       }
     }
   }
+
   .hero {
     .hero__container {
       .hero__button {
@@ -35,6 +37,7 @@
       }
     }
   }
+
   .cards-container {
     .card-item {
       .card {
@@ -48,6 +51,7 @@
       }
     }
   }
+
   .cta {
     .cta__container {
       .cta__content {
@@ -60,6 +64,7 @@
       }
     }
   }
+
   .slider {
     .slider__container {
       .slider__navigation {
@@ -67,6 +72,7 @@
           &:hover {
             &:not([disabled]) {
               background-color: $white;
+
               .slider__icon {
                 path {
                   stroke: $primary;
@@ -78,6 +84,7 @@
       }
     }
   }
+  
   .gift-section {
     .tabs-container {
       .tabs-item {
@@ -87,6 +94,7 @@
             width: 100%;
           }
         }
+
         .active-tab {
           &:hover {
             cursor: default;
@@ -95,6 +103,7 @@
       }
     }
   }
+
   .footer {
     .footer__container {
       .footer__contacts-container {
@@ -109,6 +118,7 @@
           }
         }
       }
+
       .footer__socials-container {
         .socials {
           .social-link-item {
@@ -123,6 +133,7 @@
             }
           }
         }
+
         .footer__caption {
           &:hover {
             color: $primary;
@@ -131,6 +142,7 @@
       }
     }
   }
+
   .cursor-pointer {
     &:hover { 
       cursor: pointer;
